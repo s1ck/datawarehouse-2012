@@ -135,7 +135,8 @@ BEGIN
 		@source varchar(1000),
 		@tmp_string varchar(1000),
 		@tmp_int int,
-		@i int
+		@i int,
+		@j int
 
 	-- do some little cleaning if wanted
 	IF @clean = 1
@@ -170,19 +171,21 @@ BEGIN
 			SET @tmp_int = [dbo].[count_occurences](@tmp_string, ',')
 		
 			-- year
-			-- if there are more than one comma, there is ususally a year in it on the last position
-			IF @tmp_int > 0
-				SET @i = PATINDEX('%[0-9][0-9][0-9][0-9]%', @tmp_string)							
-				SET @year_string = SUBSTRING(@tmp_string, @i, 4)
-				IF ISNUMERIC(@year_string) = 1
-					SET @year = @year_string
+			-- if there is at least one commata, there is ususally a year after the commata
+			IF @tmp_int > 0 -- try to find 4-digit years after the last commata
+				SET @year_string = [dbo].[get_part](@tmp_string, @tmp_int + 1, ',', 1)
+			ELSE -- in case there is no comma, try to find a 4-digit year in the venue_series and take this one
+				SET @year_string = @tmp_string
+			SET @i = PATINDEX('%[0-9][0-9][0-9][0-9]%', @year_string)
+			IF @i > 0
+				SET @year = SUBSTRING(@year_string, @i, 4)			
 
 			-- venue-series
 			-- venue series is anything before the last commata
-			--IF @tmp_int > 2
-			--	SET @venue_series = SUBSTRING(@tmp_string, 0, [dbo].[last_index_of](',', @tmp_string))
-			--ELSE
-			SET @venue_series = [dbo].[get_part](@tmp_string, 1,', ', 1)
+			IF @tmp_int > 2
+				SET @venue_series = SUBSTRING(@tmp_string, 0, [dbo].[last_index_of](',', @tmp_string))
+			ELSE
+				SET @venue_series = [dbo].[get_part](@tmp_string, 1,',', 1)
 		END
 
 	-- process source
@@ -197,15 +200,22 @@ BEGIN
 	-- insert one row for each author including its position in the string
 	SET @authors = [dbo].[get_part](@additional, 1, ' - ', 1)
 	SET @author_count = [dbo].[count_occurences](@authors, ',') + 1	
-	SET @i = 1
-	WHILE @i <= @author_count
+	SET @i = 1 -- for the author pos
+	SET @j = 1 -- for the while loop
+	WHILE @j <= @author_count
 	BEGIN
-		SET @author = [dbo].[get_part](@authors, @i, ',', 1)
-		-- when there are special chars before the author has length 0
-		IF LEN(@author) > 0		
+		SET @author = [dbo].[get_part](@authors, @j, ',', 1)
+		-- remove the '...' from the authors name
+		IF PATINDEX('%&hellip;%', @author) > 0
+			SET @author = LTRIM(RTRIM(REPLACE(@author, '&hellip;', '')))
+		-- when there are special chars before the author has length 0		
+		IF (LEN(@author) > 0)
+		BEGIN
 			INSERT INTO @result (author, author_pos, year, venue_series, source)
 				SELECT @author, @i, @year, @venue_series, @source
-		SET @i = @i + 1		
+			SET @i = @i + 1
+		END
+		SET @j = @j + 1
 	END
 
 	RETURN
@@ -226,7 +236,7 @@ FROM
 OUTER APPLY
 	[dbo].[build_denormalized_table](gs.Additional, 0) as result 
 --WHERE
---	gs.id = 13137840790945039
+--	gs.id = 8623493352720403
 
 -- Analytical Queries
 
@@ -235,8 +245,7 @@ OUTER APPLY
 
 -- TODO:
 
--- some years are in 2-digit format and not separated by , from the venue_series
--- when there are special chars like &hellip; at the beginning of the authors field, this is counted as one author, so the pos for the others is not correct
+-- when there are special chars like &hellip; at the beginning of the authors field, this is counted as one author, so the pos for the others is not correct [DONE]
 
 -- handle cases where there are 3 seperators [DONE]
 -- SELECT [dbo].[count_occurences](additional,' - ') as number_of_seps, additional, id FROM gs_denormalized WHERE [dbo].[count_occurences](additional, ' - ') = 3
@@ -247,3 +256,13 @@ OUTER APPLY
 -- handle part 2 with multiple commas (currently only the first part is used as venue_series) [DONE]
 
 -- check if additional only contains of <author> - <source> (validate with id 11238173839627016) [DONE]
+
+-- if the year is not the last (comma seperated) part in the part2, then try to find a 4-digit number in whole part2 [DONE]
+
+-- some years are in 2-digit format and not separated by , from the venue_series (validate with 3620827803844651)
+
+-- check if it makes sense to store the author pos when the author string starts with '...'
+
+-- problem-ids (not complete):
+
+-- 8623493352720403, 23798054753065399 (shortened names because of '...' removal)
