@@ -1,0 +1,17 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{D183A3D8-5FD8-494B-B014-37F57B35E655}") = "dwh_prak", "dwh_prak\dwh_prak.dtproj", "{4DCA2347-A03B-49F9-BC07-52A4D0328834}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Development|Default = Development|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4DCA2347-A03B-49F9-BC07-52A4D0328834}.Development|Default.ActiveCfg = Development
+		{4DCA2347-A03B-49F9-BC07-52A4D0328834}.Development|Default.Build.0 = Development
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
