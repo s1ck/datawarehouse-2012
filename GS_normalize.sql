@@ -116,6 +116,7 @@ BEGIN
 		@author_count int,
 		@venue_series varchar(1000),
 		@year int,
+		@year_string varchar(10),
 		@source varchar(1000),
 		@tmp_string varchar(1000),
 		@tmp_int int,
@@ -123,7 +124,7 @@ BEGIN
 
 	-- do some little cleaning if wanted
 	IF @clean = 1
-	BEGIN
+	BEGIN						  
 		-- remove some special chars if wanted
 		SET @additional = REPLACE(@additional, '&hellip;', '')
 		-- remove leading and tailing whitespaces
@@ -152,9 +153,13 @@ BEGIN
 
 			-- year
 			-- if there are more than one comma, there is ususally a year in it on the last position
-			IF @tmp_int > 0
-				IF ISNUMERIC([dbo].[get_part](@tmp_string, @tmp_int + 1, ',', 1)) = 1			
-					SET @year = [dbo].[get_part](@tmp_string, @tmp_int + 1, ',', 1)
+			IF @tmp_int > 0				
+				--SET @year_string = [dbo].[get_part](@tmp_string, @tmp_int + 1, ',', 1)
+				--SET @year_string = LTRIM(RTRIM(@year_string))
+				SET @i = PATINDEX('%[0-9][0-9][0-9][0-9]%', @tmp_string)
+				SET @year_string = SUBSTRING(@tmp_string, @i, 4)
+				IF ISNUMERIC(@year_string) = 1
+					SET @year = @year_string
 		END
 
 	-- process source
@@ -184,8 +189,7 @@ END
 
 GO
 
-SELECT 
-	TOP 500 
+SELECT	
 	gs.id,
 	gs.additional,
 	result.author,
@@ -198,8 +202,7 @@ FROM
 OUTER APPLY
 	[dbo].[build_denormalized_table](gs.Additional, 1) as result
 --WHERE
---	gs.id = 1859351532282327369
-
+--	gs.id = 12292286922714753276
 
 -- Analytical Queries
 
@@ -213,3 +216,6 @@ OUTER APPLY
 
 -- handle cases where there are 3 seperators [DONE]
 -- SELECT [dbo].[count_occurences](additional,' - ') as number_of_seps, additional, id FROM gs_denormalized WHERE [dbo].[count_occurences](additional, ' - ') = 3
+
+-- handle cases where there are 0 seperators
+-- SELECT [dbo].[count_occurences](additional,' - ') as number_of_seps, additional, id FROM gs_denormalized WHERE [dbo].[count_occurences](additional, ' - ') = 0 ORDER BY additional
