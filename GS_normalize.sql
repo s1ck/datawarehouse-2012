@@ -1,16 +1,30 @@
  use [dwhprak06]
 
 IF OBJECT_ID('dbo.get_part') IS NOT NULL drop function [dbo].[get_part]
+IF OBJECT_ID('dbo.last_index_of') IS NOT NULL drop function [dbo].[last_index_of]
 IF OBJECT_ID('dbo.splitstring') IS NOT NULL drop function [dbo].[splitstring]
 IF OBJECT_ID('dbo.count_occurences') IS NOT NULL drop function [dbo].[count_occurences]
 IF OBJECT_ID('dbo.build_denormalized_table') IS NOT NULL drop function [dbo].[build_denormalized_table]
 
 GO
 
+-- Returns the last index of @pattern in @string or len(string) if the pattern is not inside
+CREATE FUNCTION [dbo].[last_index_of] (
+	@pattern varchar(MAX),
+	@string varchar(MAX)
+) RETURNS
+	int
+AS
+BEGIN
+	RETURN LEN(@string) - CHARINDEX(REVERSE(@pattern), REVERSE(@string))
+END
+
+GO
+
 -- Returns the number of occurences of @pattern in @string
 CREATE FUNCTION [dbo].[count_occurences] (
 	@string varchar(MAX),
-	@pattern varchar(100)
+	@pattern varchar(MAX)
 ) RETURNS
 	int
 AS
@@ -26,6 +40,7 @@ END
 
 GO
 
+-- splits the given given strint at the seperator value and returns a table with all parts
 CREATE FUNCTION [dbo].[splitstring] (		
 		@stringToSplit VARCHAR(MAX),
 		@seperator nvarchar(3) 
@@ -131,12 +146,14 @@ BEGIN
 		SET @additional = LTRIM(RTRIM(@additional))
 	END
 	
+	-- ' - ' is the main seperator in the additional string	
 	SET @occurences = [dbo].[count_occurences](@additional, ' - ')
 
 	-- process venue_series and year
 	IF @occurences >= 1
 		-- in 31 cases, there are 3 ' - ' seperators in the string, this handles it
 		IF @occurences = 3
+			-- build a new part 2
 			SET @tmp_string = [dbo].[get_part](@additional, 2, ' - ', 1) + ' - ' + [dbo].[get_part](@additional, 3, ' - ', 1)
 		ELSE
 			SET @tmp_string = [dbo].[get_part](@additional, 2, ' - ', 1)
@@ -144,22 +161,28 @@ BEGIN
 		-- in some cases part 2 is just the year, so check it and leave the rest
 		IF ISNUMERIC(@tmp_string) = 1
 			SET @year = @tmp_string
+		-- in some other cases part2 is already the source field (which has no year in it)
+		ELSE IF PATINDEX('% [0-9][0-9][0-9][0-9]%', @tmp_string) = 0 AND @occurences = 1
+			SET @source = @tmp_string
 		ELSE
 		BEGIN
+			-- number of commata in part 2
 			SET @tmp_int = [dbo].[count_occurences](@tmp_string, ',')
 		
-			-- venue-series
-			SET @venue_series = [dbo].[get_part](@tmp_string, 1,',', 1) 
-
 			-- year
 			-- if there are more than one comma, there is ususally a year in it on the last position
-			IF @tmp_int > 0				
-				--SET @year_string = [dbo].[get_part](@tmp_string, @tmp_int + 1, ',', 1)
-				--SET @year_string = LTRIM(RTRIM(@year_string))
-				SET @i = PATINDEX('%[0-9][0-9][0-9][0-9]%', @tmp_string)
+			IF @tmp_int > 0
+				SET @i = PATINDEX('%[0-9][0-9][0-9][0-9]%', @tmp_string)							
 				SET @year_string = SUBSTRING(@tmp_string, @i, 4)
 				IF ISNUMERIC(@year_string) = 1
 					SET @year = @year_string
+
+			-- venue-series
+			-- venue series is anything before the last commata
+			--IF @tmp_int > 2
+			--	SET @venue_series = SUBSTRING(@tmp_string, 0, [dbo].[last_index_of](',', @tmp_string))
+			--ELSE
+			SET @venue_series = [dbo].[get_part](@tmp_string, 1,', ', 1)
 		END
 
 	-- process source
@@ -170,7 +193,8 @@ BEGIN
 			-- for the string with 3 seperators
 			SET @source = [dbo].[get_part](@additional, 4, ' - ', 1)
 
-	-- authors are always available
+	-- process authors (authors are always available)
+	-- insert one row for each author including its position in the string
 	SET @authors = [dbo].[get_part](@additional, 1, ' - ', 1)
 	SET @author_count = [dbo].[count_occurences](@authors, ',') + 1	
 	SET @i = 1
@@ -190,19 +214,19 @@ END
 GO
 
 SELECT	
-	gs.id,
-	gs.additional,
+	gs.id as id,
+	gs.additional as additional,
 	result.author,
 	result.author_pos,
 	result.venue_series,
-	result.year,
+	result.year as year,
 	result.source
 FROM 
 	[dbo].[gs_denormalized] as gs
 OUTER APPLY
-	[dbo].[build_denormalized_table](gs.Additional, 1) as result
+	[dbo].[build_denormalized_table](gs.Additional, 0) as result 
 --WHERE
---	gs.id = 12292286922714753276
+--	gs.id = 13137840790945039
 
 -- Analytical Queries
 
@@ -217,5 +241,9 @@ OUTER APPLY
 -- handle cases where there are 3 seperators [DONE]
 -- SELECT [dbo].[count_occurences](additional,' - ') as number_of_seps, additional, id FROM gs_denormalized WHERE [dbo].[count_occurences](additional, ' - ') = 3
 
--- handle cases where there are 0 seperators
+-- handle cases where there are 0 seperators [DONE]
 -- SELECT [dbo].[count_occurences](additional,' - ') as number_of_seps, additional, id FROM gs_denormalized WHERE [dbo].[count_occurences](additional, ' - ') = 0 ORDER BY additional
+
+-- handle part 2 with multiple commas (currently only the first part is used as venue_series) [DONE]
+
+-- check if additional only contains of <author> - <source> (validate with id 11238173839627016) [DONE]
