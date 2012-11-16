@@ -1,268 +1,162 @@
  use [dwhprak06]
 
-IF OBJECT_ID('dbo.get_part') IS NOT NULL drop function [dbo].[get_part]
-IF OBJECT_ID('dbo.last_index_of') IS NOT NULL drop function [dbo].[last_index_of]
-IF OBJECT_ID('dbo.splitstring') IS NOT NULL drop function [dbo].[splitstring]
-IF OBJECT_ID('dbo.count_occurences') IS NOT NULL drop function [dbo].[count_occurences]
-IF OBJECT_ID('dbo.build_denormalized_table') IS NOT NULL drop function [dbo].[build_denormalized_table]
+IF OBJECT_ID('dbo.gs_author_publication') IS NOT NULL drop table [dbo].[gs_author_publication]
+IF OBJECT_ID('dbo.gs_author') IS NOT NULL drop table [dbo].[gs_author]
+IF OBJECT_ID('dbo.gs_venue_publication') IS NOT NULL drop table [dbo].[gs_venue_publication]
+IF OBJECT_ID('dbo.gs_publication') IS NOT NULL drop table [dbo].[gs_publication]
+IF OBJECT_ID('dbo.gs_origin') IS NOT NULL drop table [dbo].[gs_origin]
+IF OBJECT_ID('dbo.gs_venue') IS NOT NULL drop table [dbo].[gs_venue]
+IF OBJECT_ID('dbo.gs_venue_series') IS NOT NULL drop table [dbo].[gs_venue_series]
+
+IF OBJECT_ID('dbo.get_venue_series_NULL_id') IS NOT NULL DROP FUNCTION [dbo].[get_venue_series_NULL_id]
 
 GO
 
--- Returns the last index of @pattern in @string or len(string) if the pattern is not inside
-CREATE FUNCTION [dbo].[last_index_of] (
-	@pattern varchar(MAX),
-	@string varchar(MAX)
-) RETURNS
-	int
+-- returns the id of the venue_series which is attached to NULL
+-- because we do not know how to update via subselect!
+CREATE FUNCTION get_venue_series_NULL_id()
+RETURNS INT
 AS
 BEGIN
-	RETURN LEN(@string) - CHARINDEX(REVERSE(@pattern), REVERSE(@string))
+	DECLARE @result int
+	SELECT @result = id FROM gs_venue_series where name IS NULL
+	RETURN @result
 END
 
 GO
 
--- Returns the number of occurences of @pattern in @string
-CREATE FUNCTION [dbo].[count_occurences] (
-	@string varchar(MAX),
-	@pattern varchar(MAX)
-) RETURNS
-	int
-AS
-BEGIN
-	-- Subtract the length of the string without the pattern occurences from
-	-- the original length to get the total length of all pattern occurences, 
-	-- then divide it with the length of one pattern.
-
-	-- LEN cannot be used here, because it uses RTRIM intenally and strips tailing whitespaces
-	-- out of the pattern, so DATALENGTH is the right choice
-	RETURN (DATALENGTH(@string) - DATALENGTH(REPLACE(@string, @pattern, ''))) / DATALENGTH(@pattern);
-END
-
-GO
-
--- splits the given given strint at the seperator value and returns a table with all parts
-CREATE FUNCTION [dbo].[splitstring] (		
-		@stringToSplit VARCHAR(MAX),
-		@seperator nvarchar(3) 
-) RETURNS
-	@returnList TABLE ([value] [nvarchar] (500))
-AS
-BEGIN
-	DECLARE @name NVARCHAR(255)
-	DECLARE @pos INT
-
-	WHILE CHARINDEX(@seperator, @stringToSplit) > 0
-	BEGIN
-		SET @pos  = CHARINDEX(@seperator, @stringToSplit)  
-		SET @name = SUBSTRING(@stringToSplit, 1, @pos-1)
-
-		SET @name = RTRIM(LTRIM(@name))
-		INSERT INTO @returnList 
-			SELECT @name
-
-		SET @stringToSplit = SUBSTRING(@stringToSplit, @pos+1, LEN(@stringToSplit)-@pos)
-	END
-
-	INSERT INTO @returnList
-		SELECT RTRIM(LTRIM(@stringToSplit))
-	RETURN
-END
-
-GO
-
- CREATE FUNCTION [dbo].[get_part] (
-	-- input text
-	@value varchar(4000), 
-	-- which part of it
-	@part int,
-	-- seperator char
-    @seperator varchar(3),
-	-- trim true / false
-	@trim bit = 1
+-- author
+CREATE TABLE [dbo].[gs_author] (
+	[id] bigint NOT NULL PRIMARY KEY IDENTITY,
+	[name] varchar(100)
 )
-RETURNS varchar(4000)
-AS 
-BEGIN
-	DECLARE @start int,
-		@finish int,
-		@seplen int,
-		@return varchar(4000)
-	
-	SET @start = 1
-	SET @finish = CHARINDEX(@seperator, @value, @start)
-	SET @seplen = DATALENGTH(@seperator)
-	WHILE (@part > 1 AND @finish > 0) 
-	BEGIN
-		SET @start = @finish + @seplen
-		SET @finish = CHARINDEX(@seperator, @value, @start)
-		SET @part = @part - 1
-	END
+INSERT INTO [dbo].[gs_author] (name)
+	SELECT DISTINCT([author])
+	FROM [dbo].[gs_tmp]
+-- eo author
 
-	IF @part > 1 --not found
-		SET @start = LEN(@value) + @seplen 
-	IF @finish = 0 --last token on line
-		SET @finish = LEN(@value) + @seplen 
+-- origin
+CREATE TABLE [dbo].[gs_origin] (
+	[id] bigint NOT NULL PRIMARY KEY IDENTITY,
+	[text] varchar(255),
+)
+INSERT INTO [dbo].[gs_origin] ([text])
+	SELECT DISTINCT([source])
+	FROM [dbo].[gs_tmp]
+-- eo origin
 
-	SET @return = SUBSTRING(@value, @start, @finish - @start)
+-- publication
+CREATE TABLE [dbo].[gs_publication] (
+	[id] numeric(20,0) NOT NULL PRIMARY KEY,
+	[title] varchar(1000),
+	[url] varchar(1000),
+	[no_of_citings] int,
+	[origin_id] bigint,
+	FOREIGN KEY ([origin_id]) REFERENCES [dbo].[gs_origin]([id])
+)
+INSERT INTO [dbo].[gs_publication] ([id], [title], [url], [no_of_citings], [origin_id])
+	SELECT DISTINCT -- because of the different authors in tmp
+		[gs_tmp].[gs_id],
+		[gs_tmp].[title],
+		[gs_tmp].[url],
+		[gs_tmp].[no_of_citings],
+		[gs_origin].[id]
+	FROM
+		[dbo].[gs_tmp]		
+	LEFT OUTER JOIN 
+		[dbo].[gs_origin]
+	ON
+		[gs_tmp].[source] = [gs_origin].[text]
+-- eo publication
 
-	IF @trim = 1
-		SET @return = LTRIM(RTRIM(@return))
-	RETURN @return
-End
+-- author_publication
+CREATE TABLE [dbo].[gs_author_publication] (
+	[author_id] bigint,
+	[publication_id] numeric(20,0),
+	[pos] smallint,
+	FOREIGN KEY ([author_id]) REFERENCES [dbo].[gs_author](id),
+	FOREIGN KEY ([publication_id]) REFERENCES [dbo].[gs_publication](id),
+	PRIMARY KEY ([author_id], [publication_id], [pos])
+)
+INSERT INTO [dbo].[gs_author_publication] ([author_id], [publication_id], [pos])
+	SELECT DISTINCT
+		[gs_author].[id],
+		[gs_tmp].[gs_id],
+		[gs_tmp].[author_pos]
+	FROM [dbo].[gs_author], [dbo].[gs_tmp]
+	WHERE [gs_author].[name] = [gs_tmp].[author]
+-- eo author publication
 
-GO
+-- venue series
+CREATE TABLE [dbo].[gs_venue_series] (
+	[id] bigint NOT NULL PRIMARY KEY IDENTITY,
+	[name] varchar(500)
+)
+INSERT INTO [dbo].[gs_venue_series] ([name])
+	SELECT 
+		DISTINCT([venue_series])
+	FROM 
+		[dbo].[gs_tmp]
+-- eo venue series
 
-CREATE FUNCTION [dbo].[build_denormalized_table] (
-	@additional varchar(4000),
-	@clean bit = 1
-) 
-RETURNS @result TABLE (
-	[author] varchar(1000),
-	[author_pos] int,
-	[venue_series] varchar(1000),
+-- venue
+CREATE TABLE [dbo].[gs_venue] (
+	[id] bigint NOT NULL PRIMARY KEY IDENTITY,
+	[publication_id] numeric(20,0),
+	[title] varchar(255),
 	[year] int,
-	[source] varchar(1000)
+	[venue_series_id] bigint
+	--FOREIGN KEY ([venue_series_id]) REFERENCES [dbo].[gs_venue_series](id)
 )
-AS
-BEGIN
-	DECLARE @occurences int,
-		@authors varchar(1000),
-		@author varchar(255),
-		@author_count int,
-		@venue_series varchar(1000),
-		@year int,
-		@year_string varchar(10),
-		@source varchar(1000),
-		@tmp_string varchar(1000),
-		@tmp_int int,
-		@i int,
-		@j int
 
-	-- do some little cleaning if wanted
-	IF @clean = 1
-	BEGIN						  
-		-- remove some special chars if wanted
-		SET @additional = REPLACE(@additional, '&hellip;', '')
-		-- remove leading and tailing whitespaces
-		SET @additional = LTRIM(RTRIM(@additional))
-	END
-	
-	-- ' - ' is the main seperator in the additional string	
-	SET @occurences = [dbo].[count_occurences](@additional, ' - ')
-
-	-- process venue_series and year
-	IF @occurences >= 1
-		-- in 31 cases, there are 3 ' - ' seperators in the string, this handles it
-		IF @occurences = 3
-			-- build a new part 2
-			SET @tmp_string = [dbo].[get_part](@additional, 2, ' - ', 1) + ' - ' + [dbo].[get_part](@additional, 3, ' - ', 1)
-		ELSE
-			SET @tmp_string = [dbo].[get_part](@additional, 2, ' - ', 1)
-
-		-- in some cases part 2 is just the year, so check it and leave the rest
-		IF ISNUMERIC(@tmp_string) = 1
-			SET @year = @tmp_string
-		-- in some other cases part2 is already the source field (which has no year in it)
-		ELSE IF PATINDEX('% [0-9][0-9][0-9][0-9]%', @tmp_string) = 0 AND @occurences = 1
-			SET @source = @tmp_string
-		ELSE
-		BEGIN
-			-- number of commata in part 2
-			SET @tmp_int = [dbo].[count_occurences](@tmp_string, ',')
+INSERT INTO [dbo].[gs_venue] ([publication_id], [year], [venue_series_id])	
+	SELECT DISTINCT
+		tmp.gs_id as publication_id,
+		tmp.year as year,		
+		vs.id as venue_series_id
+	FROM
+		gs_tmp tmp
+	LEFT OUTER JOIN
+		gs_venue_series vs
+	ON
+		vs.name = tmp.venue_series
 		
-			-- year
-			-- if there is at least one commata, there is ususally a year after the commata
-			IF @tmp_int > 0 -- try to find 4-digit years after the last commata
-				SET @year_string = [dbo].[get_part](@tmp_string, @tmp_int + 1, ',', 1)
-			ELSE -- in case there is no comma, try to find a 4-digit year in the venue_series and take this one
-				SET @year_string = @tmp_string
-			SET @i = PATINDEX('%[0-9][0-9][0-9][0-9]%', @year_string)
-			IF @i > 0
-				SET @year = SUBSTRING(@year_string, @i, 4)			
+UPDATE 
+	[dbo].[gs_venue]
+SET
+	[venue_series_id] = [dbo].[get_venue_series_NULL_id]()
+WHERE
+	[venue_series_id] IS NULL
 
-			-- venue-series
-			-- venue series is anything before the last commata
-			IF @tmp_int > 2
-				SET @venue_series = SUBSTRING(@tmp_string, 0, [dbo].[last_index_of](',', @tmp_string))
-			ELSE
-				SET @venue_series = [dbo].[get_part](@tmp_string, 1,',', 1)
-		END
 
-	-- process source
-	if @occurences >= 2
-		IF @occurences = 2
-			SET @source = [dbo].[get_part](@additional, 3, ' - ', 1)
-		ELSE
-			-- for the string with 3 seperators
-			SET @source = [dbo].[get_part](@additional, 4, ' - ', 1)
+ALTER TABLE [dbo].[gs_venue] 
+	ADD CONSTRAINT fk_gs_venue_venue_series_id FOREIGN KEY ([venue_series_id]) REFERENCES [dbo].[gs_venue_series](id)
+-- eo venue
 
-	-- process authors (authors are always available)
-	-- insert one row for each author including its position in the string
-	SET @authors = [dbo].[get_part](@additional, 1, ' - ', 1)
-	SET @author_count = [dbo].[count_occurences](@authors, ',') + 1	
-	SET @i = 1 -- for the author pos
-	SET @j = 1 -- for the while loop
-	WHILE @j <= @author_count
-	BEGIN
-		SET @author = [dbo].[get_part](@authors, @j, ',', 1)
-		-- remove the '...' from the authors name
-		IF PATINDEX('%&hellip;%', @author) > 0
-			SET @author = LTRIM(RTRIM(REPLACE(@author, '&hellip;', '')))
-		-- when there are special chars before the author has length 0		
-		IF (LEN(@author) > 0)
-		BEGIN
-			INSERT INTO @result (author, author_pos, year, venue_series, source)
-				SELECT @author, @i, @year, @venue_series, @source
-			SET @i = @i + 1
-		END
-		SET @j = @j + 1
-	END
+-- venue publication
+CREATE TABLE [dbo].[gs_venue_publication] (
+	[venue_id] bigint,
+	[publication_id] numeric(20,0),
+	FOREIGN KEY ([venue_id]) REFERENCES [dbo].[gs_venue](id),
+	FOREIGN KEY ([publication_id]) REFERENCES [dbo].[gs_publication](id),
+	PRIMARY KEY ([venue_id], [publication_id])
+)
 
-	RETURN
-END
+INSERT INTO [dbo].[gs_venue_publication] ([venue_id], [publication_id])
+	SELECT DISTINCT 
+		id,
+		publication_id
+	FROM
+		[dbo].[gs_venue]	
 
-GO
+-- eo venue publication
 
-SELECT	
-	gs.id as id,
-	gs.additional as additional,
-	result.author,
-	result.author_pos,
-	result.venue_series,
-	result.year as year,
-	result.source
-FROM 
-	[dbo].[gs_denormalized] as gs
-OUTER APPLY
-	[dbo].[build_denormalized_table](gs.Additional, 0) as result 
+
+
+--CREATE TABLE [dbo].[publication](
+--	[id] NUMERIC(20,0) PRIMARY KEY,
+-- 	[title] varchar(400),
+
+--)
 --WHERE
 --	gs.id = 8623493352720403
-
--- Analytical Queries
-
--- get number of occurences of ' - ' and the corresponding number of entities
--- SELECT [dbo].[count_occurences](additional,' - ') as number_of_seps, count(id) FROM gs_denormalized GROUP BY [dbo].[count_occurences](additional,' - ') ORDER BY number_of_seps DESC
-
--- TODO:
-
--- when there are special chars like &hellip; at the beginning of the authors field, this is counted as one author, so the pos for the others is not correct [DONE]
-
--- handle cases where there are 3 seperators [DONE]
--- SELECT [dbo].[count_occurences](additional,' - ') as number_of_seps, additional, id FROM gs_denormalized WHERE [dbo].[count_occurences](additional, ' - ') = 3
-
--- handle cases where there are 0 seperators [DONE]
--- SELECT [dbo].[count_occurences](additional,' - ') as number_of_seps, additional, id FROM gs_denormalized WHERE [dbo].[count_occurences](additional, ' - ') = 0 ORDER BY additional
-
--- handle part 2 with multiple commas (currently only the first part is used as venue_series) [DONE]
-
--- check if additional only contains of <author> - <source> (validate with id 11238173839627016) [DONE]
-
--- if the year is not the last (comma seperated) part in the part2, then try to find a 4-digit number in whole part2 [DONE]
-
--- some years are in 2-digit format and not separated by , from the venue_series (validate with 3620827803844651)
-
--- check if it makes sense to store the author pos when the author string starts with '...'
-
--- problem-ids (not complete):
-
--- 8623493352720403, 23798054753065399 (shortened names because of '...' removal)
