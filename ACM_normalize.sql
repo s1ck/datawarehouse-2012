@@ -1,12 +1,11 @@
 use [dwhprak06]
 
 if OBJECT_ID('dbo.acm_author_institution') IS NOT NULL drop table [dbo].[acm_author_institution]
-if OBJECT_ID('dbo.acm_venue_venueseries') IS NOT NULL drop table [dbo].[acm_venue_venueseries]
 if OBJECT_ID('dbo.acm_venue_publication') IS NOT NULL drop table [dbo].[acm_venue_publication]
 if OBJECT_ID('dbo.acm_author_publication') IS NOT NULL drop table [dbo].[acm_author_publication]
 if OBJECT_ID('dbo.acm_cited_by') IS NOT NULL drop table [dbo].[acm_cited_by]
-if OBJECT_ID('dbo.acm_venue_series') IS NOT NULL drop table [dbo].[acm_venue_series]
 if OBJECT_ID('dbo.acm_venue') IS NOT NULL drop table [dbo].[acm_venue]
+if OBJECT_ID('dbo.acm_venue_series') IS NOT NULL drop table [dbo].[acm_venue_series]
 if OBJECT_ID('dbo.acm_institution') IS NOT NULL drop table [dbo].[acm_institution]
 if OBJECT_ID('dbo.acm_author') IS NOT NULL drop table [dbo].[acm_author]
 if OBJECT_ID('dbo.acm_fulltext') IS NOT NULL drop table [dbo].[acm_fulltext]
@@ -81,26 +80,6 @@ INSERT INTO [dbo].[acm_institution] (name)
 
 -- eo Institution
 
--- Venue
-
-CREATE TABLE [dbo].[acm_venue] (
-	[id] bigint NOT NULL PRIMARY KEY IDENTITY,
-	-- need this because of id 645926 (2 different years)
-	[oid] bigint NOT NULL,
-	[year] int,
-	[name] nvarchar(255)
-)
-
-INSERT INTO [dbo].[acm_venue] (oid, year, name)
-	SELECT
-		distinct(id) as oid,
-		year,
-		text as name
-	FROM
-		[dbo].[acm_venue_tmp]
-
--- eo Venue
-
 -- VenueSeries
 
 CREATE TABLE [dbo].[acm_venue_series] (
@@ -116,6 +95,32 @@ INSERT INTO [dbo].[acm_venue_series] (id, name)
 		[dbo].[acm_venue_series_tmp]
 
 -- eo VenueSeries
+
+-- Venue
+
+CREATE TABLE [dbo].[acm_venue] (
+	[id] bigint NOT NULL PRIMARY KEY IDENTITY,
+	-- need this because of id 645926 (2 different years)
+	[oid] bigint NOT NULL,
+	[year] int,
+	[name] nvarchar(255),
+	[venue_series_id] nvarchar(15) NOT NULL,
+	FOREIGN KEY (venue_series_id) REFERENCES [dbo].[acm_venue_series](id)
+)
+
+INSERT INTO [dbo].[acm_venue] (oid, year, name, venue_series_id)
+	SELECT
+		distinct(venue.id) as oid,
+		venue.year,
+		venue.text as name,
+		venue_series.id as venue_series_id
+	FROM
+		[dbo].[acm_venue_tmp] venue,
+		[dbo].[acm_venue_series_tmp] venue_series
+	WHERE
+		venue.publication_id = venue_series.publication_id
+
+-- eo Venue
 
 -- Cited_by
 
@@ -194,7 +199,7 @@ INSERT INTO [dbo].[acm_venue_publication] (venue_id, publication_id)
 -- eo Venue_Publication
 
 -- Venue_Venueseries
-
+/*
 CREATE TABLE [dbo].[acm_venue_venueseries] (
 	[venue_id] bigint NOT NULL,
 	[venueseries_id] nvarchar(15) NOT NULL,
@@ -215,7 +220,7 @@ INSERT INTO [dbo].[acm_venue_venueseries] (venue_id, venueseries_id)
 		venue.oid = venue_tmp.id
 	AND
 		venue_tmp.publication_id = venueseries.publication_id
-
+*/
 -- eo Venue_Venueseries
 
 -- Author_Institution
