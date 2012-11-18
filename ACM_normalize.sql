@@ -240,11 +240,3 @@ INSERT INTO [dbo].[acm_author_institution] (author_id, institution_id)
 		author_tmp.name = author.name
 
 -- eo Author_Institution
-
--- DROP TEMPORARY TABLES
-
-if OBJECT_ID('dbo.acm_author_tmp') IS NOT NULL DELETE FROM [dbo].[acm_author_tmp]
-if OBJECT_ID('dbo.acm_citing_pub_tmp') IS NOT NULL DELETE FROM [dbo].[acm_citing_pub_tmp]
-if OBJECT_ID('dbo.acm_publication_tmp') IS NOT NULL DELETE FROM [dbo].[acm_publication_tmp]
-if OBJECT_ID('dbo.acm_venue_tmp') IS NOT NULL DELETE FROM [dbo].[acm_venue_tmp]
-if OBJECT_ID('dbo.acm_venue_series_tmp') IS NOT NULL DELETE FROM [dbo].[acm_venue_series_tmp]

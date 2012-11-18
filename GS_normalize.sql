@@ -9,6 +9,7 @@ IF OBJECT_ID('dbo.gs_venue') IS NOT NULL drop table [dbo].[gs_venue]
 IF OBJECT_ID('dbo.gs_venue_series') IS NOT NULL drop table [dbo].[gs_venue_series]
 
 IF OBJECT_ID('dbo.get_venue_series_NULL_id') IS NOT NULL DROP FUNCTION [dbo].[get_venue_series_NULL_id]
+IF OBJECT_ID('dbo.get_origin_NULL_id') IS NOT NULL DROP FUNCTION [dbo].[get_origin_NULL_id]
 
 GO
 
@@ -20,6 +21,19 @@ AS
 BEGIN
 	DECLARE @result int
 	SELECT @result = id FROM gs_venue_series where name IS NULL
+	RETURN @result
+END
+
+GO
+
+-- returns the id of the origin which is attached to NULL
+-- because we do not know how to update via subselect!
+CREATE FUNCTION get_origin_NULL_id()
+RETURNS INT
+AS
+BEGIN
+	DECLARE @result int
+	SELECT @result = id FROM gs_origin where text IS NULL
 	RETURN @result
 END
 
@@ -51,8 +65,7 @@ CREATE TABLE [dbo].[gs_publication] (
 	[title] varchar(1000),
 	[url] varchar(1000),
 	[no_of_citings] int,
-	[origin_id] bigint,
-	FOREIGN KEY ([origin_id]) REFERENCES [dbo].[gs_origin]([id])
+	[origin_id] bigint	
 )
 INSERT INTO [dbo].[gs_publication] ([id], [title], [url], [no_of_citings], [origin_id])
 	SELECT DISTINCT -- because of the different authors in tmp
@@ -67,6 +80,17 @@ INSERT INTO [dbo].[gs_publication] ([id], [title], [url], [no_of_citings], [orig
 		[dbo].[gs_origin]
 	ON
 		[gs_tmp].[source] = [gs_origin].[text]
+
+UPDATE 
+	[dbo].[gs_publication]
+SET
+	[origin_id] = [dbo].[get_origin_NULL_id]()
+WHERE
+	[origin_id] IS NULL
+
+
+ALTER TABLE [dbo].[gs_publication] 
+	ADD CONSTRAINT fk_gs_publictaion_origin_id FOREIGN KEY ([origin_id]) REFERENCES [dbo].[gs_origin]([id])	
 -- eo publication
 
 -- author_publication
