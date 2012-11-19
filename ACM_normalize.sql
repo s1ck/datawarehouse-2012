@@ -228,7 +228,9 @@ INSERT INTO [dbo].[acm_venue_venueseries] (venue_id, venueseries_id)
 CREATE TABLE [dbo].[acm_author_institution] (
 	[author_id] bigint NOT NULL,
 	[institution_id] bigint NOT NULL,
-	PRIMARY KEY (author_id, institution_id)
+	PRIMARY KEY (author_id, institution_id),
+	FOREIGN KEY (author_id) REFERENCES [dbo].[acm_author](id),
+	FOREIGN KEY (institution_id) REFERENCES [dbo].[acm_institution](id)
 )
 
 INSERT INTO [dbo].[acm_author_institution] (author_id, institution_id)
