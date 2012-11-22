@@ -32,10 +32,7 @@ AS
 BEGIN
 	-- Subtract the length of the string without the pattern occurences from
 	-- the original length to get the total length of all pattern occurences, 
-	-- then divide it with the length of one pattern.
-
-	-- LEN cannot be used here, because it uses RTRIM intenally and strips tailing whitespaces
-	-- out of the pattern, so DATALENGTH is the right choice
+	-- then divide it with the length of one pattern.	
 	RETURN (DATALENGTH(@string) - DATALENGTH(REPLACE(@string, @pattern, ''))) / DATALENGTH(@pattern);
 END
 
@@ -71,9 +68,10 @@ END
 
 GO
 
+-- Takes a @value, splits it into multiple parts by the @separator and returns the part with index @part.
  CREATE FUNCTION [dbo].[get_part] (
 	-- input text
-	@value varchar(4000), 
+	@value varchar(MAX), 
 	-- which part of it
 	@part int,
 	-- seperator char
@@ -101,7 +99,7 @@ BEGIN
 
 	IF @part > 1 --not found
 		SET @start = LEN(@value) + @seplen 
-	IF @finish = 0 --last token on line
+	IF @finish = 0 --last part on line
 		SET @finish = LEN(@value) + @seplen 
 
 	SET @return = SUBSTRING(@value, @start, @finish - @start)
@@ -109,7 +107,7 @@ BEGIN
 	IF @trim = 1
 		SET @return = LTRIM(RTRIM(@return))
 	RETURN @return
-End
+END
 
 GO
 

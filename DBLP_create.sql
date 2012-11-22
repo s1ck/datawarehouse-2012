@@ -63,8 +63,8 @@ CREATE TABLE [dbo].[dblp_venue_publication] (
 	PRIMARY KEY (venue_id, publication_id)	
 )
 
-CREATE TABLE [dbo].[dblp_cited_by] (
-	[publication1_id] bigint NOT NULL,
-	[publication2_id] bigint NOT NULL,
-	PRIMARY KEY (publication1_id, publication2_id)
-)
+--CREATE TABLE [dbo].[dblp_cited_by] (
+--	[publication1_id] bigint NOT NULL,
+--	[publication2_id] bigint NOT NULL,
+--	PRIMARY KEY (publication1_id, publication2_id)
+--)

@@ -6,6 +6,10 @@ if OBJECT_ID('dbo.acm_publication_tmp') IS NOT NULL drop table [dbo].[acm_public
 if OBJECT_ID('dbo.acm_venue_tmp') IS NOT NULL drop table [dbo].[acm_venue_tmp]
 if OBJECT_ID('dbo.acm_venue_series_tmp') IS NOT NULL drop table [dbo].[acm_venue_series_tmp]
 
+/*
+The ACM Data is imported in temporary tables first. After that, the data will be normalized into the final schema.
+*/
+
 CREATE TABLE [dbo].[acm_author_tmp] (
 	-- defined by XSD
     [pos] tinyint,
