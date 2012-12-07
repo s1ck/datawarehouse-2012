@@ -152,24 +152,30 @@ CREATE TABLE [dbo].[acm_author_publication] (
 	[author_id] bigint NOT NULL,
 	[publication_id] bigint NOT NULL,
 	[pos] tinyint,
-	PRIMARY KEY (author_id, publication_id),
+	[institution_id] bigint,
+	PRIMARY KEY (author_id, publication_id, institution_id),
 	FOREIGN KEY (author_id) REFERENCES [dbo].[acm_author](id),
-	FOREIGN KEY (publication_id) REFERENCES [dbo].[acm_publication](id)
+	FOREIGN KEY (publication_id) REFERENCES [dbo].[acm_publication](id),
+	FOREIGN KEY (institution_id) REFERENCES [dbo].[acm_institution](id)
 )
 
-INSERT INTO [dbo].[acm_author_publication] (author_id, publication_id, pos)
+INSERT INTO [dbo].[acm_author_publication] (author_id, publication_id, pos, institution_id)
 	SELECT
 		distinct(author.id) as author_id,
 		pub.id as pub_id,
-		author_tmp.pos as pos
+		author_tmp.pos as pos,
+		inst.id as institution_id
 	FROM
 		[dbo].[acm_author] author,
 		[dbo].[acm_author_tmp] author_tmp,
-		[dbo].[acm_publication_tmp] pub
+		[dbo].[acm_publication_tmp] pub,
+		[dbo].[acm_institution] inst
 	WHERE
 		author_tmp.publication_id = pub.publication_id
 	AND
 		author.name = author_tmp.name
+	AND
+		author_tmp.institution = inst.name
 
 -- eo Author_Publication
 

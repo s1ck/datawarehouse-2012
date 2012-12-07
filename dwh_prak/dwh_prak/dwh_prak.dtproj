@@ -28,18 +28,33 @@
   </Configurations>
   <DTSPackages>
     <DtsPackage FormatVersion="3">
-      <Name>dblp.dtsx</Name>
-      <FullPath>dblp.dtsx</FullPath>
+      <Name>import_dblp.dtsx</Name>
+      <FullPath>import_dblp.dtsx</FullPath>
       <References />
     </DtsPackage>
     <DtsPackage FormatVersion="3">
-      <Name>acm.dtsx</Name>
-      <FullPath>acm.dtsx</FullPath>
+      <Name>import_acm.dtsx</Name>
+      <FullPath>import_acm.dtsx</FullPath>
       <References />
     </DtsPackage>
     <DtsPackage FormatVersion="3">
-      <Name>gs.dtsx</Name>
-      <FullPath>gs.dtsx</FullPath>
+      <Name>import_gs.dtsx</Name>
+      <FullPath>import_gs.dtsx</FullPath>
+      <References />
+    </DtsPackage>
+    <DtsPackage FormatVersion="3">
+      <Name>konsolidierung_dblp-acm.dtsx</Name>
+      <FullPath>konsolidierung_dblp-acm.dtsx</FullPath>
+      <References />
+    </DtsPackage>
+    <DtsPackage FormatVersion="3">
+      <Name>konsolidierung_dblp-gs.dtsx</Name>
+      <FullPath>konsolidierung_dblp-gs.dtsx</FullPath>
+      <References />
+    </DtsPackage>
+    <DtsPackage FormatVersion="3">
+      <Name>normalisierung_acm-institutionen.dtsx</Name>
+      <FullPath>normalisierung_acm-institutionen.dtsx</FullPath>
       <References />
     </DtsPackage>
   </DTSPackages>

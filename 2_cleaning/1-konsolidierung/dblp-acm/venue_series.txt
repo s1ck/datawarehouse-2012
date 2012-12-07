@@ -1,0 +1,36 @@
+DBLP-ACM
+
+select id, name, type from dblp_venue_series where id IN (65677,65783,65591,21,33)
+select * from acm_venue_series where id IN ('J777','J869','J689','SERIES11272','SERIES473')
+
+venue_series
+------------
+
+ACM Transactions on Database Systems (Journal)
+
+ACM:	J777;ACM Transactions on Database Systems (TODS) 
+DBLP:	65677;ACM Trans. Database Syst.;Journal
+
+The VLDB Journal (Journal)
+
+ACM:	J869;The VLDB Journal — The International Journal on Very Large Data Bases 
+DBLP:	65783;VLDB J.;Journal
+
+ACM SIGMOD Record (Journal)
+
+ACM:	J689;ACM SIGMOD Record
+DBLP:	65591;SIGMOD Record;Journal
+
+VLDB (Series)
+ACM:	SERIES11272;Very Large Data Bases
+DBLP:	21;VLDB;Conference
+
+SIGMOD (Series)
+ACM:	SERIES473;International Conference on Management of Data
+DBLP:	33;SIGMOD Conference;Conference
+
+
+
+
+
+

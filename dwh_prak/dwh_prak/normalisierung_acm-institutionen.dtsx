@@ -1,0 +1,568 @@
+<?xml version="1.0"?><DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts" DTS:ExecutableType="SSIS.Package.2">
+<DTS:Property DTS:Name="PackageFormatVersion">3</DTS:Property>
+<DTS:Property DTS:Name="VersionComments"></DTS:Property>
+<DTS:Property DTS:Name="CreatorName">INFORMATIK\dwhprak06</DTS:Property>
+<DTS:Property DTS:Name="CreatorComputerName">WSERV2</DTS:Property>
+<DTS:Property DTS:Name="CreationDate" DTS:DataType="7">12/7/2012 6:32:59 PM</DTS:Property>
+<DTS:Property DTS:Name="PackageType">5</DTS:Property>
+<DTS:Property DTS:Name="ProtectionLevel">1</DTS:Property>
+<DTS:Property DTS:Name="MaxConcurrentExecutables">-1</DTS:Property>
+<DTS:Property DTS:Name="PackagePriorityClass">0</DTS:Property>
+<DTS:Property DTS:Name="VersionMajor">1</DTS:Property>
+<DTS:Property DTS:Name="VersionMinor">0</DTS:Property>
+<DTS:Property DTS:Name="VersionBuild">33</DTS:Property>
+<DTS:Property DTS:Name="VersionGUID">{8F21EDFF-FAAC-478D-BAEA-05439F42C41D}</DTS:Property>
+<DTS:Property DTS:Name="EnableConfig">0</DTS:Property>
+<DTS:Property DTS:Name="CheckpointFileName"></DTS:Property>
+<DTS:Property DTS:Name="SaveCheckpoints">0</DTS:Property>
+<DTS:Property DTS:Name="CheckpointUsage">0</DTS:Property>
+<DTS:Property DTS:Name="SuppressConfigurationWarnings">0</DTS:Property>
+<DTS:ConnectionManager>
+<DTS:Property DTS:Name="DelayValidation">0</DTS:Property>
+<DTS:Property DTS:Name="ObjectName">1_prepare.sql</DTS:Property>
+<DTS:Property DTS:Name="DTSID">{35DFD2CD-4DE4-447D-AC4A-73188273E475}</DTS:Property>
+<DTS:Property DTS:Name="Description"></DTS:Property>
+<DTS:Property DTS:Name="CreationName">FILE</DTS:Property><DTS:ObjectData><DTS:ConnectionManager>
+<DTS:Property DTS:Name="FileUsageType">0</DTS:Property>
+<DTS:Property DTS:Name="ConnectionString">\\informatik\pools\home07\dwhprak06\Eigene Dateien\sql_scripts\dwhprak05-06\2_cleaning\2-normalisierung\1_prepare.sql</DTS:Property></DTS:ConnectionManager></DTS:ObjectData></DTS:ConnectionManager>
+<DTS:ConnectionManager>
+<DTS:Property DTS:Name="DelayValidation">0</DTS:Property>
+<DTS:Property DTS:Name="ObjectName">dbserv1.dwhprak06</DTS:Property>
+<DTS:Property DTS:Name="DTSID">{71C70897-ED39-48C8-BB91-A638DE626321}</DTS:Property>
+<DTS:Property DTS:Name="Description"></DTS:Property>
+<DTS:Property DTS:Name="CreationName">OLEDB</DTS:Property><DTS:ObjectData><DTS:ConnectionManager>
+<DTS:Property DTS:Name="Retain">0</DTS:Property>
+<DTS:Property DTS:Name="ConnectionString">Data Source=dbserv1;Initial Catalog=dwhprak06;Provider=SQLNCLI10.1;Integrated Security=SSPI;Application Name=SSIS-normalisierung_acm-institutionen-{71C70897-ED39-48C8-BB91-A638DE626321}dbserv1.dwhprak06;Auto Translate=False;</DTS:Property></DTS:ConnectionManager></DTS:ObjectData></DTS:ConnectionManager>
+<DTS:Property DTS:Name="LastModifiedProductVersion">10.0.5500.0</DTS:Property>
+<DTS:Property DTS:Name="ForceExecValue">0</DTS:Property>
+<DTS:Property DTS:Name="ExecValue" DTS:DataType="3">0</DTS:Property>
+<DTS:Property DTS:Name="ForceExecutionResult">-1</DTS:Property>
+<DTS:Property DTS:Name="Disabled">0</DTS:Property>
+<DTS:Property DTS:Name="FailPackageOnFailure">0</DTS:Property>
+<DTS:Property DTS:Name="FailParentOnFailure">0</DTS:Property>
+<DTS:Property DTS:Name="MaxErrorCount">1</DTS:Property>
+<DTS:Property DTS:Name="ISOLevel">1048576</DTS:Property>
+<DTS:Property DTS:Name="LocaleID">1031</DTS:Property>
+<DTS:Property DTS:Name="TransactionOption">1</DTS:Property>
+<DTS:Property DTS:Name="DelayValidation">0</DTS:Property>
+<DTS:LoggingOptions>
+<DTS:Property DTS:Name="LoggingMode">0</DTS:Property>
+<DTS:Property DTS:Name="FilterKind">1</DTS:Property>
+<DTS:Property DTS:Name="EventFilter" DTS:DataType="8"></DTS:Property></DTS:LoggingOptions>
+<DTS:Executable DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=10.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" DTS:ThreadHint="0">
+<DTS:Property DTS:Name="ExecutionLocation">0</DTS:Property>
+<DTS:Property DTS:Name="ExecutionAddress"></DTS:Property>
+<DTS:Property DTS:Name="TaskContact">Execute SQL Task; Microsoft Corporation; Microsoft SQL Server 2008; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1</DTS:Property>
+<DTS:Property DTS:Name="ForceExecValue">0</DTS:Property>
+<DTS:Property DTS:Name="ExecValue" DTS:DataType="3">0</DTS:Property>
+<DTS:Property DTS:Name="ForceExecutionResult">-1</DTS:Property>
+<DTS:Property DTS:Name="Disabled">0</DTS:Property>
+<DTS:Property DTS:Name="FailPackageOnFailure">0</DTS:Property>
+<DTS:Property DTS:Name="FailParentOnFailure">0</DTS:Property>
+<DTS:Property DTS:Name="MaxErrorCount">1</DTS:Property>
+<DTS:Property DTS:Name="ISOLevel">1048576</DTS:Property>
+<DTS:Property DTS:Name="LocaleID">-1</DTS:Property>
+<DTS:Property DTS:Name="TransactionOption">1</DTS:Property>
+<DTS:Property DTS:Name="DelayValidation">0</DTS:Property>
+<DTS:LoggingOptions>
+<DTS:Property DTS:Name="LoggingMode">0</DTS:Property>
+<DTS:Property DTS:Name="FilterKind">1</DTS:Property>
+<DTS:Property DTS:Name="EventFilter" DTS:DataType="8"></DTS:Property></DTS:LoggingOptions>
+<DTS:Property DTS:Name="ObjectName">PREPARE</DTS:Property>
+<DTS:Property DTS:Name="DTSID">{C3CDF824-194B-402D-9DF2-5F43B799D740}</DTS:Property>
+<DTS:Property DTS:Name="Description">Task 'SQL ausführen'</DTS:Property>
+<DTS:Property DTS:Name="CreationName">Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=10.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91</DTS:Property>
+<DTS:Property DTS:Name="DisableEventHandlers">0</DTS:Property><DTS:ObjectData><SQLTask:SqlTaskData SQLTask:Connection="{71C70897-ED39-48C8-BB91-A638DE626321}" SQLTask:TimeOut="0" SQLTask:IsStoredProc="False" SQLTask:BypassPrepare="True" SQLTask:SqlStmtSourceType="FileConnection" SQLTask:SqlStatementSource="1_prepare.sql" SQLTask:CodePage="1252" SQLTask:ResultType="ResultSetType_None" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask"/></DTS:ObjectData></DTS:Executable>
+<DTS:Executable DTS:ExecutableType="SSIS.Pipeline.2">
+<DTS:Property DTS:Name="ExecutionLocation">0</DTS:Property>
+<DTS:Property DTS:Name="ExecutionAddress"></DTS:Property>
+<DTS:Property DTS:Name="TaskContact">Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server v10; (C) 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1</DTS:Property>
+<DTS:Property DTS:Name="ForceExecValue">0</DTS:Property>
+<DTS:Property DTS:Name="ExecValue" DTS:DataType="3">0</DTS:Property>
+<DTS:Property DTS:Name="ForceExecutionResult">-1</DTS:Property>
+<DTS:Property DTS:Name="Disabled">0</DTS:Property>
+<DTS:Property DTS:Name="FailPackageOnFailure">0</DTS:Property>
+<DTS:Property DTS:Name="FailParentOnFailure">0</DTS:Property>
+<DTS:Property DTS:Name="MaxErrorCount">1</DTS:Property>
+<DTS:Property DTS:Name="ISOLevel">1048576</DTS:Property>
+<DTS:Property DTS:Name="LocaleID">-1</DTS:Property>
+<DTS:Property DTS:Name="TransactionOption">1</DTS:Property>
+<DTS:Property DTS:Name="DelayValidation">0</DTS:Property>
+<DTS:LoggingOptions>
+<DTS:Property DTS:Name="LoggingMode">0</DTS:Property>
+<DTS:Property DTS:Name="FilterKind">1</DTS:Property>
+<DTS:Property DTS:Name="EventFilter" DTS:DataType="8"></DTS:Property></DTS:LoggingOptions>
+<DTS:Property DTS:Name="ObjectName">Fuzzy Grouping</DTS:Property>
+<DTS:Property DTS:Name="DTSID">{64591B16-468C-443C-B479-50BCE4217932}</DTS:Property>
+<DTS:Property DTS:Name="Description">Datenflusstask</DTS:Property>
+<DTS:Property DTS:Name="CreationName">SSIS.Pipeline.2</DTS:Property>
+<DTS:Property DTS:Name="DisableEventHandlers">0</DTS:Property><DTS:ObjectData><pipeline id="0" name="pipelineXml" description="pipelineXml" defaultBufferMaxRows="10000" engineThreads="10" defaultBufferSize="10485760" BLOBTempStoragePath="" bufferTempStoragePath="" runInOptimizedMode="true">
+<components>
+<component id="1" name="OLE DB-Quelle" componentClassID="{BCEFE59B-6819-47F7-A125-63753B33ABB7}" description="OLE DB-Quelle" localeId="-1" usesDispositions="true" validateExternalMetadata="False" version="7" pipelineVersion="0" contactInfo="OLE DB-Quelle;Microsoft Corporation;Microsoft SqlServer v10; (C) Microsoft Corporation; Alle Rechte vorbehalten; http://www.microsoft.com/sql/support;7">
+<properties>
+<property id="2" name="CommandTimeout" dataType="System.Int32" state="default" isArray="false" description="Die Anzahl der Sekunden für das Timeout eines Befehls. Der Wert '0' zeigt einen unendlichen Timeoutwert an." typeConverter="" UITypeEditor="" containsID="false" expressionType="None">0</property>
+<property id="3" name="OpenRowset" dataType="System.String" state="default" isArray="false" description="Gibt den Namen des zum Öffnen eines Rowsets verwendeten Datenbankobjekts an." typeConverter="" UITypeEditor="" containsID="false" expressionType="None">[dbo].[acm_insitution_normalized]</property>
+<property id="4" name="OpenRowsetVariable" dataType="System.String" state="default" isArray="false" description="Gibt die Variable an, die den Namen des zum Öffnen eines Rowsets verwendeten Datenbankobjekts enthält." typeConverter="" UITypeEditor="" containsID="false" expressionType="None"></property>
+<property id="5" name="SqlCommand" dataType="System.String" state="default" isArray="false" description="Der auszuführende SQL-Befehl." typeConverter="" UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=10.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" containsID="false" expressionType="None">SELECT 
+	id,
+	name,
+	REPLACE(
+		REPLACE(
+			REPLACE(
+				REPLACE(
+					lower(name),
+					'univ.', 
+					'university'
+				),
+				'technische universität',
+				'technical university'
+			),
+			'universität',
+			'university'
+		),
+		'institut für informatik',
+		'institute for computer science'
+	)
+	as name_clean
+ from acm_institution</property>
+<property id="6" name="SqlCommandVariable" dataType="System.String" state="default" isArray="false" description="Die Variable, die den auszuführenden SQL-Befehl enthält." typeConverter="" UITypeEditor="" containsID="false" expressionType="None"></property>
+<property id="7" name="DefaultCodePage" dataType="System.Int32" state="default" isArray="false" description="Gibt die zu verwendende Spaltencodeseite an, wenn keine Codeseiteninformationen von der Datenquelle verfügbar sind." typeConverter="" UITypeEditor="" containsID="false" expressionType="None">1252</property>
+<property id="8" name="AlwaysUseDefaultCodePage" dataType="System.Boolean" state="default" isArray="false" description="Erzwingt die Verwendung des DefaultCodePage-Eigenschaftswerts beim Beschreiben von Zeichendaten." typeConverter="" UITypeEditor="" containsID="false" expressionType="None">false</property>
+<property id="9" name="AccessMode" dataType="System.Int32" state="default" isArray="false" description="Gibt den zum Zugreifen auf die Datenbank verwendeten Modus an." typeConverter="AccessMode" UITypeEditor="" containsID="false" expressionType="None">0</property>
+<property id="15" name="ParameterMapping" dataType="System.String" state="default" isArray="false" description="Die Zuordnungen zwischen den Parametern im SQL-Befehl und den Variablen." typeConverter="" UITypeEditor="" containsID="false" expressionType="None"></property></properties>
+<connections>
+<connection id="10" name="OleDbConnection" description="Die für den Zugriff auf die Datenbank verwendete OLE DB-Laufzeitverbindung." connectionManagerID="{71C70897-ED39-48C8-BB91-A638DE626321}"/></connections>
+<outputs>
+<output id="11" name="Ausgabe der OLE DB-Quelle" description="" exclusionGroup="0" synchronousInputId="0" deleteOutputOnPathDetached="false" hasSideEffects="false" dangling="false" isErrorOut="false" isSorted="false" errorOrTruncationOperation="" errorRowDisposition="NotUsed" truncationRowDisposition="NotUsed"><outputColumns>
+<outputColumn id="119" name="id" description="" lineageId="119" precision="0" scale="0" length="0" dataType="i8" codePage="0" sortKeyPosition="0" comparisonFlags="0" specialFlags="0" errorOrTruncationOperation="Konvertierung" errorRowDisposition="FailComponent" truncationRowDisposition="FailComponent" externalMetadataColumnId="118" mappedColumnId="0"/>
+<outputColumn id="359" name="name" description="" lineageId="359" precision="0" scale="0" length="255" dataType="wstr" codePage="0" sortKeyPosition="0" comparisonFlags="0" specialFlags="0" errorOrTruncationOperation="Konvertierung" errorRowDisposition="FailComponent" truncationRowDisposition="FailComponent" externalMetadataColumnId="19" mappedColumnId="0"/></outputColumns><externalMetadataColumns isUsed="True">
+<externalMetadataColumn id="19" name="name" description="" precision="0" scale="0" length="255" dataType="wstr" codePage="0" mappedColumnId="0"/>
+<externalMetadataColumn id="118" name="id" description="" precision="0" scale="0" length="0" dataType="i8" codePage="0" mappedColumnId="0"/></externalMetadataColumns></output>
+<output id="12" name="Fehlerausgabe der OLE DB-Quelle" description="" exclusionGroup="0" synchronousInputId="0" deleteOutputOnPathDetached="false" hasSideEffects="false" dangling="false" isErrorOut="true" isSorted="false" errorOrTruncationOperation="" errorRowDisposition="NotUsed" truncationRowDisposition="NotUsed"><outputColumns>
+<outputColumn id="120" name="id" description="" lineageId="120" precision="0" scale="0" length="0" dataType="i8" codePage="0" sortKeyPosition="0" comparisonFlags="0" specialFlags="0" errorOrTruncationOperation="" errorRowDisposition="NotUsed" truncationRowDisposition="NotUsed" externalMetadataColumnId="0" mappedColumnId="0"/>
+<outputColumn id="13" name="ErrorCode" description="" lineageId="13" precision="0" scale="0" length="0" dataType="i4" codePage="0" sortKeyPosition="0" comparisonFlags="0" specialFlags="1" errorOrTruncationOperation="" errorRowDisposition="NotUsed" truncationRowDisposition="NotUsed" externalMetadataColumnId="0" mappedColumnId="0"/>
+<outputColumn id="14" name="ErrorColumn" description="" lineageId="14" precision="0" scale="0" length="0" dataType="i4" codePage="0" sortKeyPosition="0" comparisonFlags="0" specialFlags="2" errorOrTruncationOperation="" errorRowDisposition="NotUsed" truncationRowDisposition="NotUsed" externalMetadataColumnId="0" mappedColumnId="0"/>
+<outputColumn id="360" name="name" description="" lineageId="360" precision="0" scale="0" length="255" dataType="wstr" codePage="0" sortKeyPosition="0" comparisonFlags="0" specialFlags="0" errorOrTruncationOperation="" errorRowDisposition="NotUsed" truncationRowDisposition="NotUsed" externalMetadataColumnId="0" mappedColumnId="0"/></outputColumns><externalMetadataColumns isUsed="False"/></output>
+</outputs>
+</component>
+<component id="403" name="Fuzzygruppierung" componentClassID="{0A1BDBA0-9C6E-4AD7-97B1-E0E79E462629}" description="Gruppiert Zeilen in einem Dataset, die ähnliche Werte enthalten." localeId="-1" usesDispositions="false" validateExternalMetadata="True" version="3" pipelineVersion="0" contactInfo="Fuzzygruppierung;Microsoft Corporation;Microsoft SqlServer v10; (C) Microsoft Corporation; Alle Rechte vorbehalten; http://www.microsoft.com/sql/support;3">
+<properties>
+<property id="406" name="MinSimilarity" dataType="System.Single" state="default" isArray="false" description="Gibt den minimalen Schwellenwert für Ähnlichkeit als Wert zwischen '0' und '1' an." typeConverter="" UITypeEditor="" containsID="false" expressionType="None">0.7</property>
+<property id="407" name="Delimiters" dataType="System.String" state="default" isArray="false" description="Gibt die Leerzeichen und Interpunktionszeichen an, die zum Trennen von Zeichenfolgen in mehrere Wörter verwendet werden." typeConverter="" UITypeEditor="" containsID="false" expressionType="None"> 	
+,.;:-"'&amp;/\@!?()&lt;&gt;[]{}|#*^%</property>
+<property id="408" name="MaxMemoryUsage" dataType="System.Null" state="default" isArray="false" description="Gibt die maximale Arbeitsspeichermenge (in MB) an, die für die Transformation verwendet werden darf. Mit dem Wert 0 wird die Speicherauslastung basierend auf den Anforderungen und dem verfügbaren Systemarbeitsspeicher dynamisch verwendet." typeConverter="" UITypeEditor="" containsID="false" expressionType="Notify"/>
+<property id="409" name="Exhaustive" dataType="System.Boolean" state="default" isArray="false" description="Falls 'True', wird jeder Eingabedatensatz direkt mit JEDEM anderen Eingabedatensatz verglichen. Dies kann zu geringfügig besseren Ergebnissen führen, ist jedoch extrem langsam, außer bei sehr wenigen Eingabedatensätzen. Diese Option ist in erster Linie für das Debuggen gedacht und sollte mit Vorsicht verwendet werden." typeConverter="" UITypeEditor="" containsID="false" expressionType="None">false</property></properties>
+<connections>
+<connection id="419" name="OleDbConnection" description="" connectionManagerID="{71C70897-ED39-48C8-BB91-A638DE626321}"/></connections>
+<inputs>
+<input id="404" name="Eingabe der Fuzzygruppierung" description="" hasSideEffects="false" dangling="false" errorOrTruncationOperation="" errorRowDisposition="NotUsed" truncationRowDisposition="NotUsed"><inputColumns>
+<inputColumn id="421" name="" description="" lineageId="119" usageType="readOnly" errorOrTruncationOperation="" errorRowDisposition="NotUsed" truncationRowDisposition="NotUsed" externalMetadataColumnId="0" mappedColumnId="0"><properties>
+<property id="422" name="ToBeCleaned" dataType="System.Boolean" state="default" isArray="false" description="Zeigt an, ob die Spalte für die Bestimmung der Ähnlichkeit zweier Datensätze verwendet werden soll." typeConverter="" UITypeEditor="" containsID="false" expressionType="None">false</property>
+<property id="423" name="ExactFuzzy" dataType="System.Int32" state="default" isArray="false" description="Gibt an, ob Zeilen genau oder nur ungefähr übereinstimmen müssen, um als Duplikate angesehen zu werden." typeConverter="tcJoinType" UITypeEditor="" containsID="false" expressionType="None">2</property>
+<property id="424" name="LeadingTrailingNumeralsSignificant" dataType="System.Int32" state="default" isArray="false" description="Gibt den Hinweis an, der eine geringere Wahrscheinlichkeit einer Bewertung als Duplikat für ähnliche Zeilen bewirkt, die abweichende führende oder nachfolgende Zahlenwerte enthalten." typeConverter="tcNumeralsSignificant" UITypeEditor="" containsID="false" expressionType="None">0</property>
+<property id="425" name="MinSimilarity" dataType="System.Single" state="default" isArray="false" description="Gibt den minimalen Schwellenwert für Ähnlichkeit als Wert zwischen '0' und '1' an." typeConverter="" UITypeEditor="" containsID="false" expressionType="None">0</property>
+<property id="426" name="FuzzyComparisonFlags" dataType="System.Int32" state="default" isArray="false" description="Gibt an, wie Zeichenfolgendaten in einer Spalte verglichen werden." typeConverter="tcComparisonFlags" UITypeEditor="" containsID="false" expressionType="None">1</property></properties></inputColumn>
+<inputColumn id="430" name="" description="" lineageId="359" usageType="readOnly" errorOrTruncationOperation="" errorRowDisposition="NotUsed" truncationRowDisposition="NotUsed" externalMetadataColumnId="0" mappedColumnId="0"><properties>
+<property id="431" name="ToBeCleaned" dataType="System.Boolean" state="default" isArray="false" description="Zeigt an, ob die Spalte für die Bestimmung der Ähnlichkeit zweier Datensätze verwendet werden soll." typeConverter="" UITypeEditor="" containsID="false" expressionType="None">true</property>
+<property id="432" name="ExactFuzzy" dataType="System.Int32" state="default" isArray="false" description="Gibt an, ob Zeilen genau oder nur ungefähr übereinstimmen müssen, um als Duplikate angesehen zu werden." typeConverter="tcJoinType" UITypeEditor="" containsID="false" expressionType="None">2</property>
+<property id="433" name="LeadingTrailingNumeralsSignificant" dataType="System.Int32" state="default" isArray="false" description="Gibt den Hinweis an, der eine geringere Wahrscheinlichkeit einer Bewertung als Duplikat für ähnliche Zeilen bewirkt, die abweichende führende oder nachfolgende Zahlenwerte enthalten." typeConverter="tcNumeralsSignificant" UITypeEditor="" containsID="false" expressionType="None">0</property>
+<property id="434" name="MinSimilarity" dataType="System.Single" state="default" isArray="false" description="Gibt den minimalen Schwellenwert für Ähnlichkeit als Wert zwischen '0' und '1' an." typeConverter="" UITypeEditor="" containsID="false" expressionType="None">0.7</property>
+<property id="435" name="FuzzyComparisonFlags" dataType="System.Int32" state="default" isArray="false" description="Gibt an, wie Zeichenfolgendaten in einer Spalte verglichen werden." typeConverter="tcComparisonFlags" UITypeEditor="" containsID="false" expressionType="None">196611</property></properties></inputColumn>
+</inputColumns><externalMetadataColumns isUsed="False"/></input>
+</inputs>
+<outputs>
+<output id="405" name="Ausgabe der Fuzzygruppierung" description="" exclusionGroup="0" synchronousInputId="0" deleteOutputOnPathDetached="false" hasSideEffects="false" dangling="false" isErrorOut="false" isSorted="false" errorOrTruncationOperation="" errorRowDisposition="NotUsed" truncationRowDisposition="NotUsed"><outputColumns>
+<outputColumn id="410" name="_key_in" description="" lineageId="410" precision="0" scale="0" length="0" dataType="i4" codePage="0" sortKeyPosition="0" comparisonFlags="0" specialFlags="0" errorOrTruncationOperation="" errorRowDisposition="NotUsed" truncationRowDisposition="NotUsed" externalMetadataColumnId="0" mappedColumnId="0"><properties>
+<property id="411" name="ColumnType" dataType="System.Int32" state="default" isArray="false" description="Gibt den Spaltentyp an. Die gültigen Werte sind 'KeyIn', 'KeyOut', 'Score', 'Input' und 'Clean'." typeConverter="tcColumnType" UITypeEditor="" containsID="false" expressionType="None">1</property>
+<property id="412" name="InputId" dataType="System.Int32" state="default" isArray="false" description="Gibt die ID der Eingabespalte an. Der Wert muss eine positive ganze Zahl sein." typeConverter="" UITypeEditor="" containsID="true" expressionType="None">-1</property></properties></outputColumn>
+<outputColumn id="413" name="_key_out" description="" lineageId="413" precision="0" scale="0" length="0" dataType="i4" codePage="0" sortKeyPosition="0" comparisonFlags="0" specialFlags="0" errorOrTruncationOperation="" errorRowDisposition="NotUsed" truncationRowDisposition="NotUsed" externalMetadataColumnId="0" mappedColumnId="0"><properties>
+<property id="414" name="ColumnType" dataType="System.Int32" state="default" isArray="false" description="Gibt den Spaltentyp an. Die gültigen Werte sind 'KeyIn', 'KeyOut', 'Score', 'Input' und 'Clean'." typeConverter="tcColumnType" UITypeEditor="" containsID="false" expressionType="None">2</property>
+<property id="415" name="InputId" dataType="System.Int32" state="default" isArray="false" description="Gibt die ID der Eingabespalte an. Der Wert muss eine positive ganze Zahl sein." typeConverter="" UITypeEditor="" containsID="true" expressionType="None">-1</property></properties></outputColumn>
+<outputColumn id="416" name="_score" description="" lineageId="416" precision="0" scale="0" length="0" dataType="r4" codePage="0" sortKeyPosition="0" comparisonFlags="0" specialFlags="0" errorOrTruncationOperation="" errorRowDisposition="NotUsed" truncationRowDisposition="NotUsed" externalMetadataColumnId="0" mappedColumnId="0"><properties>
+<property id="417" name="ColumnType" dataType="System.Int32" state="default" isArray="false" description="Gibt den Spaltentyp an. Die gültigen Werte sind 'KeyIn', 'KeyOut', 'Score', 'Input' und 'Clean'." typeConverter="tcColumnType" UITypeEditor="" containsID="false" expressionType="None">3</property>
+<property id="418" name="InputId" dataType="System.Int32" state="default" isArray="false" description="Gibt die ID der Eingabespalte an. Der Wert muss eine positive ganze Zahl sein." typeConverter="" UITypeEditor="" containsID="true" expressionType="None">-1</property></properties></outputColumn>
+<outputColumn id="427" name="id" description="" lineageId="427" precision="0" scale="0" length="0" dataType="i8" codePage="0" sortKeyPosition="0" comparisonFlags="0" specialFlags="0" errorOrTruncationOperation="" errorRowDisposition="NotUsed" truncationRowDisposition="NotUsed" externalMetadataColumnId="0" mappedColumnId="0"><properties>
+<property id="428" name="ColumnType" dataType="System.Int32" state="default" isArray="false" description="Gibt den Spaltentyp an. Die gültigen Werte sind 'KeyIn', 'KeyOut', 'Score', 'Input' und 'Clean'." typeConverter="tcColumnType" UITypeEditor="" containsID="false" expressionType="None">5</property>
+<property id="429" name="InputId" dataType="System.Int32" state="default" isArray="false" description="Gibt die ID der Eingabespalte an. Der Wert muss eine positive ganze Zahl sein." typeConverter="" UITypeEditor="" containsID="true" expressionType="None">119</property></properties></outputColumn>
+<outputColumn id="436" name="name" description="" lineageId="436" precision="0" scale="0" length="255" dataType="wstr" codePage="0" sortKeyPosition="0" comparisonFlags="0" specialFlags="0" errorOrTruncationOperation="" errorRowDisposition="NotUsed" truncationRowDisposition="NotUsed" externalMetadataColumnId="0" mappedColumnId="0"><properties>
+<property id="437" name="ColumnType" dataType="System.Int32" state="default" isArray="false" description="Gibt den Spaltentyp an. Die gültigen Werte sind 'KeyIn', 'KeyOut', 'Score', 'Input' und 'Clean'." typeConverter="tcColumnType" UITypeEditor="" containsID="false" expressionType="None">5</property>
+<property id="438" name="InputId" dataType="System.Int32" state="default" isArray="false" description="Gibt die ID der Eingabespalte an. Der Wert muss eine positive ganze Zahl sein." typeConverter="" UITypeEditor="" containsID="true" expressionType="None">359</property></properties></outputColumn>
+<outputColumn id="439" name="name_clean" description="" lineageId="439" precision="0" scale="0" length="255" dataType="wstr" codePage="0" sortKeyPosition="0" comparisonFlags="0" specialFlags="0" errorOrTruncationOperation="" errorRowDisposition="NotUsed" truncationRowDisposition="NotUsed" externalMetadataColumnId="0" mappedColumnId="0"><properties>
+<property id="440" name="ColumnType" dataType="System.Int32" state="default" isArray="false" description="Gibt den Spaltentyp an. Die gültigen Werte sind 'KeyIn', 'KeyOut', 'Score', 'Input' und 'Clean'." typeConverter="tcColumnType" UITypeEditor="" containsID="false" expressionType="None">6</property>
+<property id="441" name="InputId" dataType="System.Int32" state="default" isArray="false" description="Gibt die ID der Eingabespalte an. Der Wert muss eine positive ganze Zahl sein." typeConverter="" UITypeEditor="" containsID="true" expressionType="None">359</property></properties></outputColumn>
+<outputColumn id="442" name="_Similarity_name" description="Ähnlichkeitsergebnis auf Spaltenebene für die Fuzzyverknüpfung für die name-Spalte." lineageId="442" precision="0" scale="0" length="0" dataType="r4" codePage="0" sortKeyPosition="0" comparisonFlags="0" specialFlags="0" errorOrTruncationOperation="" errorRowDisposition="NotUsed" truncationRowDisposition="NotUsed" externalMetadataColumnId="0" mappedColumnId="0"><properties>
+<property id="443" name="ColumnType" dataType="System.Int32" state="default" isArray="false" description="Gibt den Spaltentyp an. Die gültigen Werte sind 'KeyIn', 'KeyOut', 'Score', 'Input' und 'Clean'." typeConverter="tcColumnType" UITypeEditor="" containsID="false" expressionType="None">4</property>
+<property id="444" name="InputId" dataType="System.Int32" state="default" isArray="false" description="Gibt die ID der Eingabespalte an. Der Wert muss eine positive ganze Zahl sein." typeConverter="" UITypeEditor="" containsID="true" expressionType="None">359</property></properties></outputColumn></outputColumns><externalMetadataColumns isUsed="False"/></output>
+</outputs>
+</component>
+<component id="445" name="Bedingtes Teilen" componentClassID="{3AE878C6-0D6C-4F48-8128-40E00E9C1B7D}" description="Wertet Zeilen in einem Dataset aus und leitet sie an entsprechende Orte." localeId="-1" usesDispositions="true" validateExternalMetadata="True" version="0" pipelineVersion="0" contactInfo="Bedingtes Teilen;Microsoft Corporation;Microsoft SqlServer v10; (C) Microsoft Corporation; Alle Rechte vorbehalten; http://www.microsoft.com/sql/support;0">
+<inputs>
+<input id="446" name="Eingabe für bedingtes Teilen" description="Transformation für Eingabe für bedingtes Teilen" hasSideEffects="false" dangling="false" errorOrTruncationOperation="" errorRowDisposition="NotUsed" truncationRowDisposition="NotUsed"><inputColumns>
+<inputColumn id="459" name="" description="" lineageId="442" usageType="readOnly" errorOrTruncationOperation="" errorRowDisposition="NotUsed" truncationRowDisposition="NotUsed" externalMetadataColumnId="0" mappedColumnId="0"/>
+</inputColumns><externalMetadataColumns isUsed="False"/></input>
+</inputs>
+<outputs>
+<output id="460" name="Fall 1" description="Ausgabe '1' der Transformation für bedingtes Teilen" exclusionGroup="1" synchronousInputId="446" deleteOutputOnPathDetached="false" hasSideEffects="false" dangling="false" isErrorOut="false" isSorted="false" errorOrTruncationOperation="Berechnung" errorRowDisposition="FailComponent" truncationRowDisposition="FailComponent"><properties>
+<property id="461" name="Expression" dataType="System.String" state="default" isArray="false" description="Gibt den Ausdruck an. Die Version des Ausdrucks verwendet Herkunftsbezeichner anstelle von Spaltennamen." typeConverter="" UITypeEditor="" containsID="true" expressionType="None">#442 &gt; 0</property>
+<property id="462" name="FriendlyExpression" dataType="System.String" state="default" isArray="false" description="Gibt die angezeigte Version des Ausdrucks an. Die Version des Ausdrucks verwendet Spaltennamen." typeConverter="" UITypeEditor="" containsID="true" expressionType="Notify">_Similarity_name &gt; 0</property>
+<property id="463" name="EvaluationOrder" dataType="System.Int32" state="default" isArray="false" description="Gibt die Position der Bedingung in der Liste der von der Transformation ausgewerteten Bedingungen an. Werte werden aufsteigend vom niedrigsten zum höchsten ausgewertet." typeConverter="" UITypeEditor="" containsID="false" expressionType="None">0</property></properties><externalMetadataColumns isUsed="False"/></output>
+<output id="447" name="Standardausgabe für bedingtes Teilen" description="Transformation für Standardausgabe für bedingtes Teilen" exclusionGroup="1" synchronousInputId="446" deleteOutputOnPathDetached="false" hasSideEffects="false" dangling="false" isErrorOut="false" isSorted="false" errorOrTruncationOperation="" errorRowDisposition="NotUsed" truncationRowDisposition="NotUsed"><properties>
+<property id="448" name="IsDefaultOut" dataType="System.Boolean" state="default" isArray="false" description="" typeConverter="" UITypeEditor="" containsID="false" expressionType="None">true</property></properties><externalMetadataColumns isUsed="False"/></output>
+<output id="449" name="Fehlerausgabe für bedingtes Teilen" description="Transformation für Fehlerausgabe für bedingtes Teilen" exclusionGroup="1" synchronousInputId="446" deleteOutputOnPathDetached="false" hasSideEffects="false" dangling="false" isErrorOut="true" isSorted="false" errorOrTruncationOperation="" errorRowDisposition="NotUsed" truncationRowDisposition="NotUsed"><outputColumns>
+<outputColumn id="450" name="ErrorCode" description="" lineageId="450" precision="0" scale="0" length="0" dataType="i4" codePage="0" sortKeyPosition="0" comparisonFlags="0" specialFlags="1" errorOrTruncationOperation="" errorRowDisposition="NotUsed" truncationRowDisposition="NotUsed" externalMetadataColumnId="0" mappedColumnId="0"/>
+<outputColumn id="451" name="ErrorColumn" description="" lineageId="451" precision="0" scale="0" length="0" dataType="i4" codePage="0" sortKeyPosition="0" comparisonFlags="0" specialFlags="2" errorOrTruncationOperation="" errorRowDisposition="NotUsed" truncationRowDisposition="NotUsed" externalMetadataColumnId="0" mappedColumnId="0"/></outputColumns><externalMetadataColumns isUsed="False"/></output>
+</outputs>
+</component>
+<component id="464" name="OLE DB-Ziel" componentClassID="{5A0B62E8-D91D-49F5-94A5-7BE58DE508F0}" description="OLE DB-Ziel" localeId="-1" usesDispositions="true" validateExternalMetadata="False" version="4" pipelineVersion="0" contactInfo="OLE DB-Ziel;Microsoft Corporation;Microsoft SqlServer v10; (C) Microsoft Corporation; Alle Rechte vorbehalten; http://www.microsoft.com/sql/support;4">
+<properties>
+<property id="465" name="CommandTimeout" dataType="System.Int32" state="default" isArray="false" description="Die Anzahl der Sekunden für das Timeout eines Befehls. Der Wert '0' zeigt einen unendlichen Timeoutwert an." typeConverter="" UITypeEditor="" containsID="false" expressionType="None">0</property>
+<property id="466" name="OpenRowset" dataType="System.String" state="default" isArray="false" description="Gibt den Namen des zum Öffnen eines Rowsets verwendeten Datenbankobjekts an." typeConverter="" UITypeEditor="" containsID="false" expressionType="None">[dbo].[acm_institution_fuzzy_grouped]</property>
+<property id="467" name="OpenRowsetVariable" dataType="System.String" state="default" isArray="false" description="Gibt die Variable an, die den Namen des zum Öffnen eines Rowsets verwendeten Datenbankobjekts enthält." typeConverter="" UITypeEditor="" containsID="false" expressionType="None"></property>
+<property id="468" name="SqlCommand" dataType="System.String" state="default" isArray="false" description="Der auszuführende SQL-Befehl." typeConverter="" UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=10.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" containsID="false" expressionType="None"></property>
+<property id="469" name="DefaultCodePage" dataType="System.Int32" state="default" isArray="false" description="Gibt die zu verwendende Spaltencodeseite an, wenn keine Codeseiteninformationen von der Datenquelle verfügbar sind." typeConverter="" UITypeEditor="" containsID="false" expressionType="None">1252</property>
+<property id="470" name="AlwaysUseDefaultCodePage" dataType="System.Boolean" state="default" isArray="false" description="Erzwingt die Verwendung des DefaultCodePage-Eigenschaftswerts beim Beschreiben von Zeichendaten." typeConverter="" UITypeEditor="" containsID="false" expressionType="None">false</property>
+<property id="471" name="AccessMode" dataType="System.Int32" state="default" isArray="false" description="Gibt den zum Zugreifen auf die Datenbank verwendeten Modus an." typeConverter="AccessMode" UITypeEditor="" containsID="false" expressionType="None">3</property>
+<property id="473" name="FastLoadKeepIdentity" dataType="System.Boolean" state="default" isArray="false" description="Zeigt an, ob die für Identitätsspalten übergebenen Werte zum Ziel kopiert werden. Bei 'False' werden die Werte für Identitätsspalten am Ziel automatisch generiert. Trifft nur zu, wenn die Option 'Schnelles Laden' aktiviert ist." typeConverter="" UITypeEditor="" containsID="false" expressionType="None">false</property>
+<property id="474" name="FastLoadKeepNulls" dataType="System.Boolean" state="default" isArray="false" description="Zeigt an, ob für Spalten, die NULL enthalten, NULL am Ziel eingefügt wird. Bei 'False' werden für Spalten, die NULL enthalten, am Ziel die Standardwerte eingefügt. Trifft nur zu, wenn die Option 'Schnelles Laden' aktiviert ist." typeConverter="" UITypeEditor="" containsID="false" expressionType="None">false</property>
+<property id="475" name="FastLoadOptions" dataType="System.String" state="default" isArray="false" description="Gibt die für die Option 'Schnelles Laden' zu verwendenden Optionen an. Trifft nur zu, wenn die Option 'Schnelles Laden' aktiviert ist." typeConverter="" UITypeEditor="" containsID="false" expressionType="None">TABLOCK,CHECK_CONSTRAINTS</property>
+<property id="476" name="FastLoadMaxInsertCommitSize" dataType="System.Int32" state="default" isArray="false" description="Gibt an, wann beim Einfügen von Daten Commits ausgegeben werden. Der Wert '0' gibt an, dass ein Commit am Ende des Einfügens von Daten ausgegeben wird. Trifft nur zu, wenn die Option 'Schnelles Laden' aktiviert ist." typeConverter="" UITypeEditor="" containsID="false" expressionType="None">2147483647</property></properties>
+<connections>
+<connection id="472" name="OleDbConnection" description="Die für den Zugriff auf die Datenbank verwendete OLE DB-Laufzeitverbindung." connectionManagerID="{71C70897-ED39-48C8-BB91-A638DE626321}"/></connections>
+<inputs>
+<input id="477" name="Eingabe des OLE DB-Ziels" description="" hasSideEffects="true" dangling="false" errorOrTruncationOperation="Einfügen" errorRowDisposition="FailComponent" truncationRowDisposition="NotUsed"><inputColumns>
+<inputColumn id="501" name="" description="" lineageId="410" usageType="readOnly" errorOrTruncationOperation="" errorRowDisposition="NotUsed" truncationRowDisposition="NotUsed" externalMetadataColumnId="494" mappedColumnId="0"/>
+<inputColumn id="502" name="" description="" lineageId="413" usageType="readOnly" errorOrTruncationOperation="" errorRowDisposition="NotUsed" truncationRowDisposition="NotUsed" externalMetadataColumnId="495" mappedColumnId="0"/>
+<inputColumn id="503" name="" description="" lineageId="416" usageType="readOnly" errorOrTruncationOperation="" errorRowDisposition="NotUsed" truncationRowDisposition="NotUsed" externalMetadataColumnId="496" mappedColumnId="0"/>
+<inputColumn id="504" name="" description="" lineageId="427" usageType="readOnly" errorOrTruncationOperation="" errorRowDisposition="NotUsed" truncationRowDisposition="NotUsed" externalMetadataColumnId="497" mappedColumnId="0"/>
+<inputColumn id="505" name="" description="" lineageId="436" usageType="readOnly" errorOrTruncationOperation="" errorRowDisposition="NotUsed" truncationRowDisposition="NotUsed" externalMetadataColumnId="498" mappedColumnId="0"/>
+<inputColumn id="506" name="" description="" lineageId="439" usageType="readOnly" errorOrTruncationOperation="" errorRowDisposition="NotUsed" truncationRowDisposition="NotUsed" externalMetadataColumnId="499" mappedColumnId="0"/>
+<inputColumn id="507" name="" description="" lineageId="442" usageType="readOnly" errorOrTruncationOperation="" errorRowDisposition="NotUsed" truncationRowDisposition="NotUsed" externalMetadataColumnId="500" mappedColumnId="0"/>
+</inputColumns><externalMetadataColumns isUsed="True">
+<externalMetadataColumn id="494" name="_key_in" description="" precision="0" scale="0" length="0" dataType="i4" codePage="0" mappedColumnId="0"/>
+<externalMetadataColumn id="495" name="_key_out" description="" precision="0" scale="0" length="0" dataType="i4" codePage="0" mappedColumnId="0"/>
+<externalMetadataColumn id="496" name="_score" description="" precision="0" scale="0" length="0" dataType="r4" codePage="0" mappedColumnId="0"/>
+<externalMetadataColumn id="497" name="id" description="" precision="0" scale="0" length="0" dataType="i8" codePage="0" mappedColumnId="0"/>
+<externalMetadataColumn id="498" name="name" description="" precision="0" scale="0" length="4000" dataType="wstr" codePage="0" mappedColumnId="0"/>
+<externalMetadataColumn id="499" name="name_clean" description="" precision="0" scale="0" length="4000" dataType="wstr" codePage="0" mappedColumnId="0"/>
+<externalMetadataColumn id="500" name="_Similarity_name" description="" precision="0" scale="0" length="0" dataType="r4" codePage="0" mappedColumnId="0"/></externalMetadataColumns></input>
+</inputs>
+<outputs>
+<output id="478" name="Fehlerausgabe des OLE DB-Ziels" description="" exclusionGroup="1" synchronousInputId="477" deleteOutputOnPathDetached="false" hasSideEffects="false" dangling="false" isErrorOut="true" isSorted="false" errorOrTruncationOperation="" errorRowDisposition="NotUsed" truncationRowDisposition="NotUsed"><outputColumns>
+<outputColumn id="479" name="ErrorCode" description="" lineageId="479" precision="0" scale="0" length="0" dataType="i4" codePage="0" sortKeyPosition="0" comparisonFlags="0" specialFlags="1" errorOrTruncationOperation="" errorRowDisposition="NotUsed" truncationRowDisposition="NotUsed" externalMetadataColumnId="0" mappedColumnId="0"/>
+<outputColumn id="480" name="ErrorColumn" description="" lineageId="480" precision="0" scale="0" length="0" dataType="i4" codePage="0" sortKeyPosition="0" comparisonFlags="0" specialFlags="2" errorOrTruncationOperation="" errorRowDisposition="NotUsed" truncationRowDisposition="NotUsed" externalMetadataColumnId="0" mappedColumnId="0"/></outputColumns><externalMetadataColumns isUsed="False"/></output>
+</outputs>
+</component>
+</components>
+<paths>
+<path id="420" name="Ausgabe der OLE DB-Quelle" description="" startId="11" endId="404"/>
+<path id="452" name="Ausgabe der Fuzzygruppierung" description="" startId="405" endId="446"/>
+<path id="481" name="Fall 1" description="" startId="460" endId="477"/>
+</paths></pipeline></DTS:ObjectData></DTS:Executable>
+<DTS:PrecedenceConstraint>
+<DTS:Property DTS:Name="Value">0</DTS:Property>
+<DTS:Property DTS:Name="EvalOp">2</DTS:Property>
+<DTS:Property DTS:Name="LogicalAnd">-1</DTS:Property>
+<DTS:Property DTS:Name="Expression"></DTS:Property><DTS:Executable IDREF="{C3CDF824-194B-402D-9DF2-5F43B799D740}" DTS:IsFrom="-1"/><DTS:Executable IDREF="{64591B16-468C-443C-B479-50BCE4217932}" DTS:IsFrom="0"/>
+<DTS:Property DTS:Name="ObjectName">Einschränkung</DTS:Property>
+<DTS:Property DTS:Name="DTSID">{92860C45-8883-4DF0-BF04-CBDAB78F855D}</DTS:Property>
+<DTS:Property DTS:Name="Description"></DTS:Property>
+<DTS:Property DTS:Name="CreationName"></DTS:Property></DTS:PrecedenceConstraint>
+<DTS:Property DTS:Name="ObjectName">normalisierung_acm-institutionen</DTS:Property>
+<DTS:Property DTS:Name="DTSID">{BA4BF3DA-5BA8-44DC-9A32-328EED6EBA9E}</DTS:Property>
+<DTS:Property DTS:Name="Description"></DTS:Property>
+<DTS:Property DTS:Name="CreationName">SSIS.Package.2</DTS:Property>
+<DTS:Property DTS:Name="DisableEventHandlers">0</DTS:Property>
+<DTS:PackageVariable>
+<DTS:Property DTS:Name="PackageVariableValue" DTS:DataType="8">&lt;TaskHost xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0"&gt;&lt;dwd:DtsDataFlowDiagram&gt;&lt;dwd:BoundingLeft&gt;1&lt;/dwd:BoundingLeft&gt;&lt;dwd:BoundingTop&gt;2211&lt;/dwd:BoundingTop&gt;&lt;dwd:Layout&gt;&lt;dds&gt;
+  &lt;diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="Microsoft.DataWarehouse.Layout.GraphLayout100" defaultlineroute="Microsoft.DataWarehouse.Layout.GraphLayout100" version="7" nextobject="76" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-1500" scrolltop="1211" gridx="150" gridy="150" marginx="1000" marginy="1000" zoom="100" x="37544" y="19526" backcolor="15334399" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="1" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="0" backpictureclsid="{00000000-0000-0000-0000-000000000000}"&gt;
+    &lt;font&gt;
+      &lt;ddsxmlobjectstreamwrapper binary="01000000900144420100065461686f6d61" /&gt;
+    &lt;/font&gt;
+    &lt;mouseicon&gt;
+      &lt;ddsxmlobjectstreamwrapper binary="6c74000000000000" /&gt;
+    &lt;/mouseicon&gt;
+  &lt;/diagram&gt;
+  &lt;layoutmanager&gt;
+    &lt;ddsxmlobj /&gt;
+  &lt;/layoutmanager&gt;
+  &lt;ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.2" tooltip="OLE DB-Quelle" left="1" top="3043" logicalid="9" controlid="1" masterid="0" hint1="0" hint2="0" width="3598" height="1164" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0"&gt;
+    &lt;control&gt;
+      &lt;ddsxmlobjectstreaminitwrapper binary="000800000e0e00008c040000" /&gt;
+    &lt;/control&gt;
+    &lt;layoutobject&gt;
+      &lt;ddsxmlobj&gt;
+        &lt;property name="LogicalObject" value="{64591B16-468C-443C-B479-50BCE4217932}/components/1" vartype="8" /&gt;
+        &lt;property name="ShowConnectorSource" value="0" vartype="2" /&gt;
+      &lt;/ddsxmlobj&gt;
+    &lt;/layoutobject&gt;
+    &lt;shape groupshapeid="0" groupnode="0" /&gt;
+  &lt;/ddscontrol&gt;
+  &lt;ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.2" tooltip="Gruppiert Zeilen in einem Dataset, die ähnliche Werte enthalten." left="8" top="5444" logicalid="37" controlid="29" masterid="0" hint1="0" hint2="0" width="3598" height="1164" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0"&gt;
+    &lt;control&gt;
+      &lt;ddsxmlobjectstreaminitwrapper binary="000800000e0e00008c040000" /&gt;
+    &lt;/control&gt;
+    &lt;layoutobject&gt;
+      &lt;ddsxmlobj&gt;
+        &lt;property name="LogicalObject" value="{64591B16-468C-443C-B479-50BCE4217932}/components/403" vartype="8" /&gt;
+        &lt;property name="ShowConnectorSource" value="0" vartype="2" /&gt;
+      &lt;/ddsxmlobj&gt;
+    &lt;/layoutobject&gt;
+    &lt;shape groupshapeid="0" groupnode="0" /&gt;
+  &lt;/ddscontrol&gt;
+  &lt;ddscontrol controlprogid="MSDDS.Polyline" left="1401" top="3808" logicalid="38" controlid="30" masterid="0" hint1="0" hint2="0" width="806" height="2136" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0"&gt;
+    &lt;control&gt;
+      &lt;ddsxmlobj&gt;
+        &lt;polyline endtypedst="3" endtypesrc="1" usercolor="32768" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" /&gt;
+      &lt;/ddsxmlobj&gt;
+    &lt;/control&gt;
+    &lt;layoutobject&gt;
+      &lt;ddsxmlobj&gt;
+        &lt;property name="LogicalObject" value="{64591B16-468C-443C-B479-50BCE4217932}/paths/420" vartype="8" /&gt;
+        &lt;property name="Virtual" value="0" vartype="11" /&gt;
+        &lt;property name="VisibleAP" value="0" vartype="3" /&gt;
+      &lt;/ddsxmlobj&gt;
+    &lt;/layoutobject&gt;
+    &lt;connector lineroutestyle="Microsoft.DataWarehouse.Layout.GraphLayout100" sourceid="1" destid="29" sourceattachpoint="7" destattachpoint="6" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="2" relatedid="0" virtual="0"&gt;
+      &lt;point x="1800" y="4207" /&gt;
+      &lt;point x="1800" y="4825" /&gt;
+      &lt;point x="1807" y="4825" /&gt;
+      &lt;point x="1807" y="5444" /&gt;
+    &lt;/connector&gt;
+  &lt;/ddscontrol&gt;
+  &lt;ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.2" tooltip="Wertet Zeilen in einem Dataset aus und leitet sie an entsprechende Orte." left="10" top="8063" logicalid="39" controlid="31" masterid="0" hint1="0" hint2="0" width="3598" height="1164" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0"&gt;
+    &lt;control&gt;
+      &lt;ddsxmlobjectstreaminitwrapper binary="000800000e0e00008c040000" /&gt;
+    &lt;/control&gt;
+    &lt;layoutobject&gt;
+      &lt;ddsxmlobj&gt;
+        &lt;property name="LogicalObject" value="{64591B16-468C-443C-B479-50BCE4217932}/components/445" vartype="8" /&gt;
+        &lt;property name="ShowConnectorSource" value="0" vartype="2" /&gt;
+      &lt;/ddsxmlobj&gt;
+    &lt;/layoutobject&gt;
+    &lt;shape groupshapeid="0" groupnode="0" /&gt;
+  &lt;/ddscontrol&gt;
+  &lt;ddscontrol controlprogid="MSDDS.Polyline" left="1408" top="6209" logicalid="40" controlid="32" masterid="0" hint1="0" hint2="0" width="801" height="2354" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0"&gt;
+    &lt;control&gt;
+      &lt;ddsxmlobj&gt;
+        &lt;polyline endtypedst="3" endtypesrc="1" usercolor="32768" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" /&gt;
+      &lt;/ddsxmlobj&gt;
+    &lt;/control&gt;
+    &lt;layoutobject&gt;
+      &lt;ddsxmlobj&gt;
+        &lt;property name="LogicalObject" value="{64591B16-468C-443C-B479-50BCE4217932}/paths/452" vartype="8" /&gt;
+        &lt;property name="Virtual" value="0" vartype="11" /&gt;
+        &lt;property name="VisibleAP" value="0" vartype="3" /&gt;
+      &lt;/ddsxmlobj&gt;
+    &lt;/layoutobject&gt;
+    &lt;connector lineroutestyle="Microsoft.DataWarehouse.Layout.GraphLayout100" sourceid="29" destid="31" sourceattachpoint="7" destattachpoint="6" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="2" relatedid="0" virtual="0"&gt;
+      &lt;point x="1807" y="6608" /&gt;
+      &lt;point x="1807" y="7335" /&gt;
+      &lt;point x="1809" y="7335" /&gt;
+      &lt;point x="1809" y="8063" /&gt;
+    &lt;/connector&gt;
+  &lt;/ddscontrol&gt;
+  &lt;ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.2" tooltip="OLE DB-Ziel" left="9" top="11080" logicalid="41" controlid="33" masterid="0" hint1="0" hint2="0" width="3598" height="1164" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0"&gt;
+    &lt;control&gt;
+      &lt;ddsxmlobjectstreaminitwrapper binary="000800000e0e00008c040000" /&gt;
+    &lt;/control&gt;
+    &lt;layoutobject&gt;
+      &lt;ddsxmlobj&gt;
+        &lt;property name="LogicalObject" value="{64591B16-468C-443C-B479-50BCE4217932}/components/464" vartype="8" /&gt;
+        &lt;property name="ShowConnectorSource" value="0" vartype="2" /&gt;
+      &lt;/ddsxmlobj&gt;
+    &lt;/layoutobject&gt;
+    &lt;shape groupshapeid="0" groupnode="0" /&gt;
+  &lt;/ddscontrol&gt;
+  &lt;ddscontrol controlprogid="MSDDS.Polyline" left="1409" top="8828" logicalid="42" controlid="34" masterid="0" hint1="0" hint2="0" width="800" height="2752" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0"&gt;
+    &lt;control&gt;
+      &lt;ddsxmlobj&gt;
+        &lt;polyline endtypedst="3" endtypesrc="1" usercolor="32768" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1"&gt;
+          &lt;adornment percentpos="59.0614886731392" controlid="35" width="720" height="344" side="0" behavior="2" himetric="1095" distfromline="175" startobj="0" x="913" y="9834" visible="1" allowoverlap="1" usepercent="1" /&gt;
+        &lt;/polyline&gt;
+      &lt;/ddsxmlobj&gt;
+    &lt;/control&gt;
+    &lt;layoutobject&gt;
+      &lt;ddsxmlobj&gt;
+        &lt;property name="LogicalObject" value="{64591B16-468C-443C-B479-50BCE4217932}/paths/481" vartype="8" /&gt;
+        &lt;property name="Virtual" value="0" vartype="11" /&gt;
+        &lt;property name="VisibleAP" value="0" vartype="3" /&gt;
+      &lt;/ddsxmlobj&gt;
+    &lt;/layoutobject&gt;
+    &lt;connector lineroutestyle="Microsoft.DataWarehouse.Layout.GraphLayout100" sourceid="31" destid="33" sourceattachpoint="7" destattachpoint="6" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="2" relatedid="0" virtual="0"&gt;
+      &lt;point x="1809" y="9227" /&gt;
+      &lt;point x="1809" y="10153" /&gt;
+      &lt;point x="1808" y="10153" /&gt;
+      &lt;point x="1808" y="11080" /&gt;
+    &lt;/connector&gt;
+  &lt;/ddscontrol&gt;
+  &lt;ddscontrol controlprogid="MSDDS.Text" left="913" top="9834" logicalid="43" controlid="35" masterid="34" hint1="0" hint2="0" width="720" height="344" noresize="1" nomove="0" nodefaultattachpoints="1" autodrag="1" usedefaultiddshape="1" selectable="0" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="1" groupcollapsed="0" tabstop="0" visible="1" snaptogrid="0"&gt;
+    &lt;control&gt;
+      &lt;ddsxmlobjectstreaminitwrapper binary="00020000d002000058010000030000000000050000800800008001000000250001000000900144420100065461686f6d610600460061006c006c002000310000000000" /&gt;
+    &lt;/control&gt;
+    &lt;layoutobject&gt;
+      &lt;ddsxmlobj&gt;
+        &lt;property name="AnnotationAdornment" value="-1" vartype="11" /&gt;
+      &lt;/ddsxmlobj&gt;
+    &lt;/layoutobject&gt;
+    &lt;shape groupshapeid="0" groupnode="0" /&gt;
+  &lt;/ddscontrol&gt;
+&lt;/dds&gt;&lt;/dwd:Layout&gt;&lt;dwd:PersistedViewPortLeft&gt;-1500&lt;/dwd:PersistedViewPortLeft&gt;&lt;dwd:PersistedViewPortTop&gt;1211&lt;/dwd:PersistedViewPortTop&gt;&lt;/dwd:DtsDataFlowDiagram&gt;&lt;dwd:DtsComponentDesignerPropertiesList&gt;&lt;dwd:DtsComponentDesignTimeProperty&gt;&lt;dwd:key xsi:type="xsd:string"&gt;464	DataSourceViewID&lt;/dwd:key&gt;&lt;/dwd:DtsComponentDesignTimeProperty&gt;&lt;dwd:DtsComponentDesignTimeProperty&gt;&lt;dwd:key xsi:type="xsd:string"&gt;315	TableInfoObjectType&lt;/dwd:key&gt;&lt;dwd:value xsi:type="xsd:string"&gt;Table&lt;/dwd:value&gt;&lt;/dwd:DtsComponentDesignTimeProperty&gt;&lt;dwd:DtsComponentDesignTimeProperty&gt;&lt;dwd:key xsi:type="xsd:string"&gt;204	TableInfoObjectType&lt;/dwd:key&gt;&lt;dwd:value xsi:type="xsd:string"&gt;Table&lt;/dwd:value&gt;&lt;/dwd:DtsComponentDesignTimeProperty&gt;&lt;dwd:DtsComponentDesignTimeProperty&gt;&lt;dwd:key xsi:type="xsd:string"&gt;83	TableInfoObjectType&lt;/dwd:key&gt;&lt;dwd:value xsi:type="xsd:string"&gt;Table&lt;/dwd:value&gt;&lt;/dwd:DtsComponentDesignTimeProperty&gt;&lt;dwd:DtsComponentDesignTimeProperty&gt;&lt;dwd:key xsi:type="xsd:string"&gt;464	TableInfoObjectType&lt;/dwd:key&gt;&lt;dwd:value xsi:type="xsd:string"&gt;Table&lt;/dwd:value&gt;&lt;/dwd:DtsComponentDesignTimeProperty&gt;&lt;dwd:DtsComponentDesignTimeProperty&gt;&lt;dwd:key xsi:type="xsd:string"&gt;315	DataSourceViewID&lt;/dwd:key&gt;&lt;/dwd:DtsComponentDesignTimeProperty&gt;&lt;dwd:DtsComponentDesignTimeProperty&gt;&lt;dwd:key xsi:type="xsd:string"&gt;204	DataSourceViewID&lt;/dwd:key&gt;&lt;/dwd:DtsComponentDesignTimeProperty&gt;&lt;dwd:DtsComponentDesignTimeProperty&gt;&lt;dwd:key xsi:type="xsd:string"&gt;1	DataSourceViewID&lt;/dwd:key&gt;&lt;/dwd:DtsComponentDesignTimeProperty&gt;&lt;dwd:DtsComponentDesignTimeProperty&gt;&lt;dwd:key xsi:type="xsd:string"&gt;83	DataSourceViewID&lt;/dwd:key&gt;&lt;/dwd:DtsComponentDesignTimeProperty&gt;&lt;dwd:DtsComponentDesignTimeProperty&gt;&lt;dwd:key xsi:type="xsd:string"&gt;1	TableInfoObjectType&lt;/dwd:key&gt;&lt;dwd:value xsi:type="xsd:string"&gt;Table&lt;/dwd:value&gt;&lt;/dwd:DtsComponentDesignTimeProperty&gt;&lt;/dwd:DtsComponentDesignerPropertiesList&gt;&lt;/TaskHost&gt;</DTS:Property>
+<DTS:Property DTS:Name="Namespace">dts-designer-1.0</DTS:Property>
+<DTS:Property DTS:Name="ObjectName">{64591B16-468C-443C-B479-50BCE4217932}</DTS:Property>
+<DTS:Property DTS:Name="DTSID">{1AD3B074-95E5-47EA-AEFB-897616A4CE58}</DTS:Property>
+<DTS:Property DTS:Name="Description"></DTS:Property>
+<DTS:Property DTS:Name="CreationName"></DTS:Property></DTS:PackageVariable>
+<DTS:PackageVariable>
+<DTS:Property DTS:Name="PackageVariableValue" DTS:DataType="8">&lt;PipelinePath xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0"&gt;&lt;dwd:SourceName&gt;Ausgabe der OLE DB-Quelle&lt;/dwd:SourceName&gt;&lt;dwd:DestinationName&gt;Eingabe der Fuzzygruppierung&lt;/dwd:DestinationName&gt;&lt;/PipelinePath&gt;</DTS:Property>
+<DTS:Property DTS:Name="Namespace">dts-designer-1.0</DTS:Property>
+<DTS:Property DTS:Name="ObjectName">{64591B16-468C-443C-B479-50BCE4217932}-420</DTS:Property>
+<DTS:Property DTS:Name="DTSID">{56B3EEDE-7779-4FB6-9D7E-827CDE43DA4A}</DTS:Property>
+<DTS:Property DTS:Name="Description"></DTS:Property>
+<DTS:Property DTS:Name="CreationName"></DTS:Property></DTS:PackageVariable>
+<DTS:PackageVariable>
+<DTS:Property DTS:Name="PackageVariableValue" DTS:DataType="8">&lt;PipelinePath xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0"&gt;&lt;dwd:SourceName&gt;Ausgabe der Fuzzygruppierung&lt;/dwd:SourceName&gt;&lt;dwd:DestinationName&gt;Eingabe für bedingtes Teilen&lt;/dwd:DestinationName&gt;&lt;/PipelinePath&gt;</DTS:Property>
+<DTS:Property DTS:Name="Namespace">dts-designer-1.0</DTS:Property>
+<DTS:Property DTS:Name="ObjectName">{64591B16-468C-443C-B479-50BCE4217932}-452</DTS:Property>
+<DTS:Property DTS:Name="DTSID">{F63B0795-27E8-4FF7-93D7-7983E384D165}</DTS:Property>
+<DTS:Property DTS:Name="Description"></DTS:Property>
+<DTS:Property DTS:Name="CreationName"></DTS:Property></DTS:PackageVariable>
+<DTS:PackageVariable>
+<DTS:Property DTS:Name="PackageVariableValue" DTS:DataType="8">&lt;PipelinePath xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0"&gt;&lt;dwd:SourceName&gt;Fall 1&lt;/dwd:SourceName&gt;&lt;dwd:DestinationName&gt;Eingabe des OLE DB-Ziels&lt;/dwd:DestinationName&gt;&lt;/PipelinePath&gt;</DTS:Property>
+<DTS:Property DTS:Name="Namespace">dts-designer-1.0</DTS:Property>
+<DTS:Property DTS:Name="ObjectName">{64591B16-468C-443C-B479-50BCE4217932}-481</DTS:Property>
+<DTS:Property DTS:Name="DTSID">{70A70E5A-4DD0-4C3C-AE4B-279B1F20F3CA}</DTS:Property>
+<DTS:Property DTS:Name="Description"></DTS:Property>
+<DTS:Property DTS:Name="CreationName"></DTS:Property></DTS:PackageVariable>
+<DTS:PackageVariable>
+<DTS:Property DTS:Name="PackageVariableValue" DTS:DataType="8">&lt;PrecedenceConstraint xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0"&gt;&lt;dwd:EvalOp&gt;Constraint&lt;/dwd:EvalOp&gt;&lt;/PrecedenceConstraint&gt;</DTS:Property>
+<DTS:Property DTS:Name="Namespace">dts-designer-1.0</DTS:Property>
+<DTS:Property DTS:Name="ObjectName">{92860C45-8883-4DF0-BF04-CBDAB78F855D}</DTS:Property>
+<DTS:Property DTS:Name="DTSID">{FECF516E-1538-459F-BEC4-AB13DB59B002}</DTS:Property>
+<DTS:Property DTS:Name="Description"></DTS:Property>
+<DTS:Property DTS:Name="CreationName"></DTS:Property></DTS:PackageVariable>
+<DTS:PackageVariable>
+<DTS:Property DTS:Name="PackageVariableValue" DTS:DataType="8">&lt;Package xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0"&gt;&lt;dwd:DtsControlFlowDiagram&gt;&lt;dwd:BoundingLeft&gt;1000&lt;/dwd:BoundingLeft&gt;&lt;dwd:BoundingTop&gt;873&lt;/dwd:BoundingTop&gt;&lt;dwd:Layout&gt;&lt;dds&gt;
+  &lt;diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="Microsoft.DataWarehouse.Layout.GraphLayout100" defaultlineroute="Microsoft.DataWarehouse.Layout.GraphLayout100" version="7" nextobject="10" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="0" scrolltop="0" gridx="150" gridy="150" marginx="1000" marginy="1000" zoom="100" x="41116" y="15240" backcolor="15334399" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="1" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}"&gt;
+    &lt;font&gt;
+      &lt;ddsxmlobjectstreamwrapper binary="01010000900180380100065461686f6d61" /&gt;
+    &lt;/font&gt;
+    &lt;mouseicon&gt;
+      &lt;ddsxmlobjectstreamwrapper binary="6c74000000000000" /&gt;
+    &lt;/mouseicon&gt;
+  &lt;/diagram&gt;
+  &lt;layoutmanager&gt;
+    &lt;ddsxmlobj /&gt;
+  &lt;/layoutmanager&gt;
+  &lt;ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.2" tooltip="Datenflusstask" left="1351" top="3810" logicalid="4" controlid="1" masterid="0" hint1="0" hint2="0" width="3598" height="1164" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0"&gt;
+    &lt;control&gt;
+      &lt;ddsxmlobjectstreaminitwrapper binary="000800000e0e00008c040000" /&gt;
+    &lt;/control&gt;
+    &lt;layoutobject&gt;
+      &lt;ddsxmlobj&gt;
+        &lt;property name="LogicalObject" value="{64591B16-468C-443C-B479-50BCE4217932}" vartype="8" /&gt;
+        &lt;property name="ShowConnectorSource" value="0" vartype="2" /&gt;
+      &lt;/ddsxmlobj&gt;
+    &lt;/layoutobject&gt;
+    &lt;shape groupshapeid="0" groupnode="0" /&gt;
+  &lt;/ddscontrol&gt;
+  &lt;ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.2" tooltip="Task 'SQL ausführen'" left="1350" top="873" logicalid="5" controlid="2" masterid="0" hint1="0" hint2="0" width="3598" height="1164" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0"&gt;
+    &lt;control&gt;
+      &lt;ddsxmlobjectstreaminitwrapper binary="000800000e0e00008c040000" /&gt;
+    &lt;/control&gt;
+    &lt;layoutobject&gt;
+      &lt;ddsxmlobj&gt;
+        &lt;property name="LogicalObject" value="{C3CDF824-194B-402D-9DF2-5F43B799D740}" vartype="8" /&gt;
+        &lt;property name="ShowConnectorSource" value="0" vartype="2" /&gt;
+      &lt;/ddsxmlobj&gt;
+    &lt;/layoutobject&gt;
+    &lt;shape groupshapeid="0" groupnode="0" /&gt;
+  &lt;/ddscontrol&gt;
+  &lt;ddscontrol controlprogid="MSDDS.Polyline" left="2750" top="1638" logicalid="6" controlid="3" masterid="0" hint1="0" hint2="0" width="800" height="2672" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0"&gt;
+    &lt;control&gt;
+      &lt;ddsxmlobj&gt;
+        &lt;polyline endtypedst="3" endtypesrc="1" usercolor="32768" linestyle="0" linerender="2" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" /&gt;
+      &lt;/ddsxmlobj&gt;
+    &lt;/control&gt;
+    &lt;layoutobject&gt;
+      &lt;ddsxmlobj&gt;
+        &lt;property name="LogicalObject" value="{92860C45-8883-4DF0-BF04-CBDAB78F855D}" vartype="8" /&gt;
+        &lt;property name="Virtual" value="0" vartype="11" /&gt;
+        &lt;property name="VisibleAP" value="0" vartype="3" /&gt;
+      &lt;/ddsxmlobj&gt;
+    &lt;/layoutobject&gt;
+    &lt;connector lineroutestyle="Microsoft.DataWarehouse.Layout.GraphLayout100" sourceid="2" destid="1" sourceattachpoint="7" destattachpoint="6" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="2" relatedid="0" virtual="0"&gt;
+      &lt;point x="3149" y="2037" /&gt;
+      &lt;point x="3149" y="2923" /&gt;
+      &lt;point x="3150" y="2923" /&gt;
+      &lt;point x="3150" y="3810" /&gt;
+    &lt;/connector&gt;
+  &lt;/ddscontrol&gt;
+&lt;/dds&gt;&lt;/dwd:Layout&gt;&lt;/dwd:DtsControlFlowDiagram&gt;&lt;/Package&gt;</DTS:Property>
+<DTS:Property DTS:Name="Namespace">dts-designer-1.0</DTS:Property>
+<DTS:Property DTS:Name="ObjectName">{BA4BF3DA-5BA8-44DC-9A32-328EED6EBA9E}</DTS:Property>
+<DTS:Property DTS:Name="DTSID">{4B3765C1-8CD5-462C-8F11-EF0DA39B8382}</DTS:Property>
+<DTS:Property DTS:Name="Description"></DTS:Property>
+<DTS:Property DTS:Name="CreationName"></DTS:Property></DTS:PackageVariable>
+<DTS:PackageVariable>
+<DTS:Property DTS:Name="PackageVariableValue" DTS:DataType="8">&lt;Package xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0"&gt;&lt;dwd:DtsControlFlowDiagram&gt;&lt;dwd:BoundingLeft&gt;1000&lt;/dwd:BoundingLeft&gt;&lt;dwd:BoundingTop&gt;873&lt;/dwd:BoundingTop&gt;&lt;dwd:Layout&gt;&lt;dds&gt;
+  &lt;diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="Microsoft.DataWarehouse.Layout.GraphLayout100" defaultlineroute="Microsoft.DataWarehouse.Layout.GraphLayout100" version="7" nextobject="10" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="0" scrolltop="0" gridx="150" gridy="150" marginx="1000" marginy="1000" zoom="100" x="41116" y="15240" backcolor="15334399" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="1" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}"&gt;
+    &lt;font&gt;
+      &lt;ddsxmlobjectstreamwrapper binary="01010000900180380100065461686f6d61" /&gt;
+    &lt;/font&gt;
+    &lt;mouseicon&gt;
+      &lt;ddsxmlobjectstreamwrapper binary="6c74000000000000" /&gt;
+    &lt;/mouseicon&gt;
+  &lt;/diagram&gt;
+  &lt;layoutmanager&gt;
+    &lt;ddsxmlobj /&gt;
+  &lt;/layoutmanager&gt;
+  &lt;ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.2" tooltip="Datenflusstask" left="1351" top="3810" logicalid="4" controlid="1" masterid="0" hint1="0" hint2="0" width="3598" height="1164" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0"&gt;
+    &lt;control&gt;
+      &lt;ddsxmlobjectstreaminitwrapper binary="000800000e0e00008c040000" /&gt;
+    &lt;/control&gt;
+    &lt;layoutobject&gt;
+      &lt;ddsxmlobj&gt;
+        &lt;property name="LogicalObject" value="{64591B16-468C-443C-B479-50BCE4217932}" vartype="8" /&gt;
+        &lt;property name="ShowConnectorSource" value="0" vartype="2" /&gt;
+      &lt;/ddsxmlobj&gt;
+    &lt;/layoutobject&gt;
+    &lt;shape groupshapeid="0" groupnode="0" /&gt;
+  &lt;/ddscontrol&gt;
+  &lt;ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.2" tooltip="Task 'SQL ausführen'" left="1350" top="873" logicalid="5" controlid="2" masterid="0" hint1="0" hint2="0" width="3598" height="1164" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0"&gt;
+    &lt;control&gt;
+      &lt;ddsxmlobjectstreaminitwrapper binary="000800000e0e00008c040000" /&gt;
+    &lt;/control&gt;
+    &lt;layoutobject&gt;
+      &lt;ddsxmlobj&gt;
+        &lt;property name="LogicalObject" value="{C3CDF824-194B-402D-9DF2-5F43B799D740}" vartype="8" /&gt;
+        &lt;property name="ShowConnectorSource" value="0" vartype="2" /&gt;
+      &lt;/ddsxmlobj&gt;
+    &lt;/layoutobject&gt;
+    &lt;shape groupshapeid="0" groupnode="0" /&gt;
+  &lt;/ddscontrol&gt;
+  &lt;ddscontrol controlprogid="MSDDS.Polyline" left="2750" top="1638" logicalid="6" controlid="3" masterid="0" hint1="0" hint2="0" width="800" height="2672" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0"&gt;
+    &lt;control&gt;
+      &lt;ddsxmlobj&gt;
+        &lt;polyline endtypedst="3" endtypesrc="1" usercolor="32768" linestyle="0" linerender="2" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" /&gt;
+      &lt;/ddsxmlobj&gt;
+    &lt;/control&gt;
+    &lt;layoutobject&gt;
+      &lt;ddsxmlobj&gt;
+        &lt;property name="LogicalObject" value="{92860C45-8883-4DF0-BF04-CBDAB78F855D}" vartype="8" /&gt;
+        &lt;property name="Virtual" value="0" vartype="11" /&gt;
+        &lt;property name="VisibleAP" value="0" vartype="3" /&gt;
+      &lt;/ddsxmlobj&gt;
+    &lt;/layoutobject&gt;
+    &lt;connector lineroutestyle="Microsoft.DataWarehouse.Layout.GraphLayout100" sourceid="2" destid="1" sourceattachpoint="7" destattachpoint="6" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="2" relatedid="0" virtual="0"&gt;
+      &lt;point x="3149" y="2037" /&gt;
+      &lt;point x="3149" y="2923" /&gt;
+      &lt;point x="3150" y="2923" /&gt;
+      &lt;point x="3150" y="3810" /&gt;
+    &lt;/connector&gt;
+  &lt;/ddscontrol&gt;
+&lt;/dds&gt;&lt;/dwd:Layout&gt;&lt;/dwd:DtsControlFlowDiagram&gt;&lt;/Package&gt;</DTS:Property>
+<DTS:Property DTS:Name="Namespace">dts-designer-1.0</DTS:Property>
+<DTS:Property DTS:Name="ObjectName">package-diagram</DTS:Property>
+<DTS:Property DTS:Name="DTSID">{0A3DE02F-F497-44CA-BE9B-47616719EE30}</DTS:Property>
+<DTS:Property DTS:Name="Description"></DTS:Property>
+<DTS:Property DTS:Name="CreationName"></DTS:Property></DTS:PackageVariable></DTS:Executable>
