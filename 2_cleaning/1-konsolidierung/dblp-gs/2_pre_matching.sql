@@ -26,7 +26,7 @@ INSERT INTO [dbo].[dblp_gs] (dblp_id, gs_id, _Similarity, _Confidence, _Similari
 		LOWER(dblp.title) = LOWER(gs.title)
 	AND
 		LOWER(dblp.title)
-	NOT IN ('introduction','preface')
+	NOT IN ('introduction','preface','editorial','foreword')
 )
 
 /*

@@ -6,17 +6,23 @@ This script contains all work to match DBLP and ACM publications without using t
 
 -- title exact matcher
 
-INSERT INTO [dbo].[dblp_acm] (dblp_id, acm_id) (
+INSERT INTO [dbo].[dblp_acm] (dblp_id, acm_id, _Similarity, _Confidence, _Similarity_title) (
 	SELECT
-		dblp.id as dblp_id,
-		acm.id as acm_id
+		dblp.id as dblp_id
+		,acm.id as acm_id
+		,1.0 as _Similarity
+		,1.0 as _Confidence
+		,1.0 as _Similarity_title
 	FROM
 		[dbo].[dblp_publication] as dblp,
 		[dbo].[acm_publication] as acm
 	WHERE
-		LOWER(dblp.title) = LOWER(acm.title)
+		LOWER(dblp.title) = LOWER(acm.title)	
 	AND
-		dblp.start_page = acm.start_page
-	AND
-		dblp.end_page = acm.end_page
+		LOWER(dblp.title)
+	NOT IN ('introduction','preface','editorial','foreword')
+	--AND
+		--dblp.start_page = acm.start_page
+	--AND
+		--dblp.end_page = acm.end_page
 )

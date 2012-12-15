@@ -24,7 +24,7 @@ BEGIN
 	SET @pos = CHARINDEX('@', @text)	
 	WHILE @pos > 0 -- there is at least one an email in it
 	BEGIN
-		-- check how many parts this thingy has
+		-- check how many parts this thing has
 		SET @parts = [dbo].[count_occurences](@text, ' ')
 		IF @parts > 1
 		BEGIN
@@ -77,6 +77,7 @@ BEGIN
 	SET @text = REPLACE(@text, 'Technische Univ.', 'Technical University of')
 	SET @text = REPLACE(@text, 'Technische Universität', 'Technical University of')
 	SET @text = REPLACE(@text, 'Universität', 'University of')
+	SET @text = REPLACE(@text, 'Universitat', 'University of')
 	SET @text = REPLACE(@text, 'Univ.', 'University')
 	SET @text = REPLACE(@text, 'Institut für Informatik', 'Institute for Computer Science')
 	

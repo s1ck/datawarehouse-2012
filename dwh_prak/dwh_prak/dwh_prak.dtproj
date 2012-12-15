@@ -57,5 +57,10 @@
       <FullPath>normalisierung_acm-institutionen.dtsx</FullPath>
       <References />
     </DtsPackage>
+    <DtsPackage FormatVersion="3">
+      <Name>extraktion_acm-self-citings.dtsx</Name>
+      <FullPath>extraktion_acm-self-citings.dtsx</FullPath>
+      <References />
+    </DtsPackage>
   </DTSPackages>
 </Project>

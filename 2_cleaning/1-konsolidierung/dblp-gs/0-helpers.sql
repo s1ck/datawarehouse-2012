@@ -35,6 +35,7 @@ NOT IN (
 SELECT
 	pub.id
 	,pub.title
+	,venser.name
 FROM
 	dblp_publication pub
 JOIN
