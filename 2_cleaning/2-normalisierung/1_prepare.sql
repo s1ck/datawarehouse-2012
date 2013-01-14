@@ -35,7 +35,7 @@ GO
 INSERT INTO [dbo].[acm_insitution_normalized] (id, name) (
 	SELECT 
 		id,
-		[dbo].[university_stripper](
+		--[dbo].[university_stripper](
 			[dbo].[normalize_patterns](
 				[dbo].[remove_numbers](	
 					[dbo].[remove_email](
@@ -45,7 +45,7 @@ INSERT INTO [dbo].[acm_insitution_normalized] (id, name) (
 					)
 				)
 			)
-		)
+		--)
 		AS name
 	FROM 
 		[dbo].[acm_institution]

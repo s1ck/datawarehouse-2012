@@ -1,5 +1,10 @@
 use dwhprak06 
 
+/*
+The following queries are used in the Business Intelligence Studio to filter the relevant 
+DBLP-Publications for the fuzzy search operator. They are copy-pasted into an "OLE DB-Quelle"
+*/
+
 -- get all DBLP publications from venue series associated to ACM Trans. Database Syst.
 
 SELECT

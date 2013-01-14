@@ -1,0 +1,118 @@
+1. Objektkonsolidierung
+=======================
+
+Mapping DBLP -> ACM (Martin)
+-------------------
+
+[SSIS-Paket:]
+
+konsolidierung_dblp-acm.dtsx
+
+[Ansatz:]
+
+(1) Exact Match (lowercase Titel) zwischen allen DBLP und ACM Publikationen
+(2) Insert in Mapping Tabelle
+(3) Selektion von DBLP und ACM Publikationen gruppiert nach Venue Series ohne Exact Matches
+(4) Fuzzysuche auf Titeln (MinSimilarity 0.85)
+(5) Insert in Mapping Tabelle
+
+[Files:]
+
+0_helpers.sql		Queries zur Selektion der DBLP Publikation nach Venue Series
+1_prepare.sql		Anlegen der Mapping Tabelle
+			Anlegen der Views zur Selektion der ACM Publikation nach Venue Series
+			Anlegen des Validation View DBLP_ACM_VALIDATION_VIEW (ORDER BY sim_title)
+2_pre_matching.sql	Exact Match auf Publikations-Titeln
+
+[Ergebnis:]
+
+151 übereinstimmende Publikationen
+
+
+Mapping DBLP -> GS (Patrick)
+------------------
+
+[SSIS-Paket:]
+
+konsolidierung_dblp-gs.dtsx
+
+[Ansatz:]
+
+(1) Exact Match (lowercase Titel) zwischen allen DBLP und GS Publikationen
+(2) Insert in Mapping Tabelle
+(3) Selektion von DBLP und GS Publikationen gruppiert nach Venue Series ohne Exact Matches
+(4) Fuzzysuche auf Titeln (MinSimilarity 0.8)
+(5) Insert in Mapping Tabelle
+
+[Files:]
+
+0_helpers.sql		Queries zur Selektion der DBLP Publikation nach Venue Series
+1_prepare.sql		Anlegen der Mapping Tabelle
+			Anlegen der Views zur Selektion der GS Publikation nach Venue Series
+			Anlegen des Validation View DBLP_GS_VALIDATION_VIEW
+2_pre_matching.sql	Exact Match auf Publikations-Titeln
+
+[Ergebnis:]
+
+1185 übereinstimmende Publikationen
+
+2. Datennormalisierung (Patrick)
+======================
+
+Normalisierung von Institutionsnamen.
+
+[SSIS-Paket:]
+
+normalisierung_acm-institutionen.dtsx
+
+[Ansatz:]
+
+(1) Erweiterung des Schemas: 	author_pub -> author_pub_institution ("Author schreibt Publikation bei Institution")
+				author_institution bleibt bestehen ("Alle Institutionen eines Authors")
+(2) Cleaning der Institutionsnamen: siehe Files 0_helpers.sql
+(3) Fuzzy Grouping auf Institutionsnamen (min_similarity = 0.7)
+(4) Aktualisieren der acm_insitution mit einem Verweis auf den Surrogaten
+
+[Files:]
+
+0_helpers.sql		Funktionen um unnötige Informationen aus den Institutionsnamen zu entfernen
+			Ziel: Optimierung des Institutionsnamens für das Fuzzy Grouping
+			- Emails
+			- Zahlen (Postleitzahlen)
+			- Sprachennormalisierung
+			- Ausschneiden von "University of xxxx" (wird aktuell nicht verwendet "West Ontario")
+			- Entfernen unnötiger Zeichen
+1_prepare.sql		Vorbereiten der Institutionsnamen für das Fuzzy Grouping
+3_update.sql		Aktualisierung der acm_insitution mit Verweis auf Surrogaten
+			Anlegen der Validation View ACM_VALIDATE_SURROGATE_NAMES ( ORDER BY surrogate_name_id)
+
+
+3. Ableitung neuer Daten (Martin)
+========================
+
+Finden von Selbstzitierungen innerhalb von ACM.
+
+[SSIS-Paket:]
+
+extraktion_acm-self-citings.dtsx
+
+[Ansatz:]
+
+(1) Finden aller Publikationen (Publikation 1 und 2 in acm_publication),
+die mindestens einen gemeinsamen Author haben
+(2) Finden aller Publikationen (Publikation 1 in acm_publication, Publikation 2 in citingPub.text),
+die mindestens einen gemeinsamen Author haben
+
+
+[Files:]
+
+1_prepare.sql		Erstellen der Tabelle "acm_self_cited" mit pub1_id, pub2_id, Anzahl übereinstimmender Authors
+			Funktion zum Extrahieren der Authors aus dem "text" Attribut einer CitingPub
+			Funktion zum Extrahieren des Titles aus dem "text" Attribut einer CitingPub
+			Erstellen des Validation Views ACM_VALIDATE_SELF_CITINGS (order by num_same_authors DESC, publication2_id)
+2_extract_self_citings.sql	Query, die (1) und (2) realisiert :)
+
+
+[Ergebnis:]
+
+siehe View

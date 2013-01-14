@@ -27,6 +27,8 @@ INSERT INTO
 				acm_cited_by cited
 		) as subsub
 		OUTER APPLY (
+			-- Intersect of Authors fom Publication 1 and 2 (self citing)
+			-- Authors from Publication 1
 			SELECT 
 				acm_author.id
 			FROM
@@ -38,6 +40,7 @@ INSERT INTO
 			AND
 				acm_author_publication.publication_id = pub1
 			INTERSECT
+			-- Authors from Publication 2
 			SELECT 
 				acm_author.id
 			FROM
@@ -52,11 +55,13 @@ INSERT INTO
 		WHERE
 			author.id IS NOT NULL
 		GROUP BY
+			-- group to get number of same authors between two publications
 			pub1,pub2
 		HAVING
 			count(*) > 0
-		UNION	
-
+		-- put this all together with those publications where publication 2 is NOT in
+		-- acm_publication (we compare the authors names to get a match)
+		UNION
 		/*
 		Part 2:		
 
@@ -74,6 +79,7 @@ INSERT INTO
 				acm_cited_by cited			
 		) as subsub
 		OUTER APPLY (
+			-- Authors from Publication 1
 			SELECT 
 				acm_author.id
 			FROM
@@ -85,11 +91,13 @@ INSERT INTO
 			AND
 				acm_author_publication.publication_id = pub1
 			INTERSECT
+			-- 
 			SELECT
 				author_l.id
 			FROM
 				acm_author author_l
 			JOIN(
+				-- get all authors from the citingPub.text attribute
 				SELECT DISTINCT		
 					result.author as name
 				FROM 
