@@ -1,0 +1,644 @@
+﻿<Cube xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="23edbf14-cafd-4a5d-9b00-6e3de4000ec3" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>dwhprak06</ID>
+  <Name>dwhprak06</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+      <Value>
+        <dds xmlns="">
+          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="24" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-7204" scrolltop="-7938" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="31485" y="24686" backcolor="15334399" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+            <font>
+              <ddsxmlobjectstreamwrapper binary="01000000900144420100065461686f6d61" />
+            </font>
+            <mouseicon>
+              <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+            </mouseicon>
+          </diagram>
+          <layoutmanager>
+            <ddsxmlobj />
+          </layoutmanager>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.2" tooltip="cube_Publication" left="13150" top="5292" logicalid="12" controlid="1" masterid="0" hint1="0" hint2="0" width="3043" height="3995" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="00080000e30b00009b0f0000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dbo_cube_Publication" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.2" tooltip="cube_Time" left="15000" top="12207" logicalid="13" controlid="2" masterid="0" hint1="0" hint2="0" width="3000" height="1879" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="00080000b80b000057070000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dbo_cube_Time" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="MSDDS.Polyline" left="14921" top="8987" logicalid="14" controlid="3" masterid="0" hint1="0" hint2="0" width="879" height="3720" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobj>
+                <polyline endtypedst="6" endtypesrc="3" usercolor="0" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+              </ddsxmlobj>
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dataSet.Relations[fk_time]" vartype="8" />
+                <property name="Virtual" value="0" vartype="11" />
+                <property name="VisibleAP" value="0" vartype="3" />
+              </ddsxmlobj>
+            </layoutobject>
+            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="2" destid="1" sourceattachpoint="0" destattachpoint="7" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+              <point x="15400" y="12207" />
+              <point x="15400" y="11382" />
+              <point x="15221" y="11382" />
+              <point x="15221" y="9287" />
+            </connector>
+          </ddscontrol>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.2" tooltip="cube_VenueSeries" left="7193" top="8940" logicalid="15" controlid="4" masterid="0" hint1="0" hint2="0" width="3000" height="1879" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="00080000b80b000057070000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dbo_cube_VenueSeries" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="MSDDS.Polyline" left="9893" top="8089" logicalid="16" controlid="5" masterid="0" hint1="0" hint2="0" width="3557" height="1640" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobj>
+                <polyline endtypedst="6" endtypesrc="3" usercolor="0" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+              </ddsxmlobj>
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dataSet.Relations[fk_venueseries]" vartype="8" />
+                <property name="Virtual" value="0" vartype="11" />
+                <property name="VisibleAP" value="0" vartype="3" />
+              </ddsxmlobj>
+            </layoutobject>
+            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="4" destid="1" sourceattachpoint="11" destattachpoint="20" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+              <point x="10193" y="9329" />
+              <point x="11870" y="9329" />
+              <point x="11870" y="8389" />
+              <point x="13150" y="8389" />
+            </connector>
+          </ddscontrol>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.2" tooltip="cube_Title" left="19972" top="7062" logicalid="17" controlid="6" masterid="0" hint1="0" hint2="0" width="3000" height="1879" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="00080000b80b000057070000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dbo_cube_Title" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="MSDDS.Polyline" left="15893" top="6989" logicalid="18" controlid="7" masterid="0" hint1="0" hint2="0" width="4379" height="862" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobj>
+                <polyline endtypedst="6" endtypesrc="3" usercolor="0" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+              </ddsxmlobj>
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dataSet.Relations[fk_title]" vartype="8" />
+                <property name="Virtual" value="0" vartype="11" />
+                <property name="VisibleAP" value="0" vartype="3" />
+              </ddsxmlobj>
+            </layoutobject>
+            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="6" destid="1" sourceattachpoint="10" destattachpoint="17" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+              <point x="19972" y="7451" />
+              <point x="18083" y="7451" />
+              <point x="18083" y="7289" />
+              <point x="16193" y="7289" />
+            </connector>
+          </ddscontrol>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.2" tooltip="cube_AuthorPublication" left="7514" top="4339" logicalid="19" controlid="8" masterid="0" hint1="0" hint2="0" width="3000" height="1879" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="00080000b80b000057070000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dbo_cube_AuthorPublication" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="MSDDS.Polyline" left="10214" top="4428" logicalid="20" controlid="9" masterid="0" hint1="0" hint2="0" width="3236" height="3811" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobj>
+                <polyline endtypedst="6" endtypesrc="3" usercolor="0" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+              </ddsxmlobj>
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dataSet.Relations[fk_publication]" vartype="8" />
+                <property name="Virtual" value="0" vartype="11" />
+                <property name="VisibleAP" value="0" vartype="3" />
+              </ddsxmlobj>
+            </layoutobject>
+            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="1" destid="8" sourceattachpoint="18" destattachpoint="11" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+              <point x="13150" y="7839" />
+              <point x="11541" y="7839" />
+              <point x="11541" y="4728" />
+              <point x="10514" y="4728" />
+            </connector>
+          </ddscontrol>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.2" tooltip="cube_Author" left="1887" top="3573" logicalid="21" controlid="10" masterid="0" hint1="0" hint2="0" width="3000" height="2302" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="00080000b80b0000fe080000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dbo_cube_Author" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="MSDDS.Polyline" left="4088" top="2873" logicalid="22" controlid="11" masterid="0" hint1="0" hint2="0" width="3726" height="2155" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobj>
+                <polyline endtypedst="6" endtypesrc="3" usercolor="0" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+              </ddsxmlobj>
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dataSet.Relations[fk_author]" vartype="8" />
+                <property name="Virtual" value="0" vartype="11" />
+                <property name="VisibleAP" value="0" vartype="3" />
+              </ddsxmlobj>
+            </layoutobject>
+            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="10" destid="8" sourceattachpoint="8" destattachpoint="10" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+              <point x="4487" y="3573" />
+              <point x="4487" y="3173" />
+              <point x="6754" y="3173" />
+              <point x="6754" y="4728" />
+              <point x="7514" y="4728" />
+            </connector>
+          </ddscontrol>
+        </dds>
+      </Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>-7204</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>-7938</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>1887</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>3573</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Dimensions>
+    <Dimension dwd:design-time-name="f267846a-5f0c-44ff-873c-122fcea8b38f">
+      <ID>Cube Time</ID>
+      <Name>Time</Name>
+      <DimensionID>Cube Time</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="5e8b1dcb-f473-4f53-a3e8-89da8630a9b5">
+          <AttributeID>Year</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="5ec10ce0-908d-4b3e-8d95-44cd7ec337eb">
+          <AttributeID>Decade</AttributeID>
+        </Attribute>
+      </Attributes>
+      <Hierarchies>
+        <Hierarchy dwd:design-time-name="8122ee2f-0ede-423c-a101-ce79ca4aa014">
+          <HierarchyID>Hierarchie</HierarchyID>
+        </Hierarchy>
+      </Hierarchies>
+    </Dimension>
+    <Dimension dwd:design-time-name="9a770425-89da-48ad-a826-6c950fd65902">
+      <ID>Cube Venue Series</ID>
+      <Name>Venue Series</Name>
+      <DimensionID>Cube Venue Series</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="2a5ea454-66f5-4e70-9b5a-066e9c9d9100">
+          <AttributeID>Id</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="73609f73-a342-4388-bcc0-1b2d64e08efa">
+          <AttributeID>Description</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+    <Dimension dwd:design-time-name="9336b29c-0cc7-4a4b-a933-8f5185be54d2">
+      <ID>Cube Title</ID>
+      <Name>Title</Name>
+      <DimensionID>Cube Title</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="cf9c18ea-8378-4c8c-b630-7000b69250bc">
+          <AttributeID>Id</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="8faf3616-26c6-4c2c-9cf0-3ea8bb9389ca">
+          <AttributeID>Title</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+    <Dimension dwd:design-time-name="3106fd3e-48ae-44c6-a83b-b654e2e5b892">
+      <ID>Cube Author</ID>
+      <Name>Author</Name>
+      <DimensionID>Cube Author</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="6fd09635-a75a-46fc-8aef-d012d51c6763">
+          <AttributeID>Id</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="43083e9f-a93c-4418-8904-b7d8e8b8ddf4">
+          <AttributeID>Name</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="c88a4519-f0e0-412e-adfd-2b28b877c67e">
+          <AttributeID>Institution</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+    <Dimension dwd:design-time-name="2a2cef15-2a55-43d9-8f79-19bd75b91229">
+      <ID>Cube Publication</ID>
+      <Name>Publication</Name>
+      <DimensionID>Cube Publication</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="4f4e5000-de51-4d6b-ad83-b7c8b6e4b1d4">
+          <AttributeID>Id</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="77705fbb-8d4c-4be9-9c76-91ebbd402ecd">
+          <AttributeID>Cube Title - Id</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="5df701fe-997c-47f6-ae35-ceb2c805b1a1">
+          <AttributeID>Year</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="41033a89-33ea-4703-b176-5716d873dcb5">
+          <AttributeID>Cube Venue Series - Id</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+  </Dimensions>
+  <Perspectives>
+    <Perspective dwd:design-time-name="daf26d58-9770-46af-9552-7ed9c357aae7">
+      <ID>Perspektive</ID>
+      <Name>CitationCube</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <Dimensions>
+        <Dimension dwd:design-time-name="418e3602-9a70-4760-b5e8-c6f194553dba">
+          <CubeDimensionID>Cube Time</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="59df6cda-257b-45eb-9266-5843a2be7f2a">
+              <AttributeID>Year</AttributeID>
+            </Attribute>
+            <Attribute dwd:design-time-name="0de743c3-951a-4214-9ad5-f89127bbea0a">
+              <AttributeID>Decade</AttributeID>
+            </Attribute>
+          </Attributes>
+          <Hierarchies>
+            <Hierarchy dwd:design-time-name="c06d14e2-0c88-47b8-9b3a-762f89928bdc">
+              <HierarchyID>Hierarchie</HierarchyID>
+            </Hierarchy>
+          </Hierarchies>
+        </Dimension>
+        <Dimension dwd:design-time-name="9b865059-0df4-493b-b478-ea776d283f03">
+          <CubeDimensionID>Cube Venue Series</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="4a98f69b-6a99-4491-921a-9673fef0b32f">
+              <AttributeID>Id</AttributeID>
+            </Attribute>
+            <Attribute dwd:design-time-name="d7d7e36e-8bd8-45fd-a000-e6c359dda64e">
+              <AttributeID>Description</AttributeID>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension dwd:design-time-name="6da221e8-e0bc-474b-8b66-de5dbf02f97f">
+          <CubeDimensionID>Cube Title</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="dd7e4b4d-9cce-4878-8dc0-492b2e644fb4">
+              <AttributeID>Id</AttributeID>
+            </Attribute>
+            <Attribute dwd:design-time-name="b0d60c28-1f3f-483d-9a08-0f2d59992537">
+              <AttributeID>Title</AttributeID>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension dwd:design-time-name="75268a8d-d2ed-4d7d-b4b7-85bb5743f52b">
+          <CubeDimensionID>Cube Author</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="7dcb9d84-816e-4868-b8ad-3ab602d45b51">
+              <AttributeID>Id</AttributeID>
+            </Attribute>
+            <Attribute dwd:design-time-name="b018856e-be21-4763-91b5-82f8e7c175a2">
+              <AttributeID>Name</AttributeID>
+            </Attribute>
+            <Attribute dwd:design-time-name="67d460c8-1b4b-4cd0-87c1-5490abc63991">
+              <AttributeID>Institution</AttributeID>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+      </Dimensions>
+      <MeasureGroups>
+        <MeasureGroup dwd:design-time-name="5142cf20-18f4-414d-b3b9-234477d4fa25">
+          <MeasureGroupID>Cube Publication</MeasureGroupID>
+          <Measures>
+            <Measure dwd:design-time-name="eb7e834e-13ea-43c6-9b01-1c8b61d76caa">
+              <MeasureID>Citings GS</MeasureID>
+            </Measure>
+            <Measure dwd:design-time-name="fa664fb8-b443-4116-8ed4-3802503d723c">
+              <MeasureID>Citings ACM</MeasureID>
+            </Measure>
+            <Measure dwd:design-time-name="9b14061d-9e23-433d-a287-d4482344d533">
+              <MeasureID>Citings ACM Self</MeasureID>
+            </Measure>
+            <Measure dwd:design-time-name="103c9497-b6b2-4ca8-8a48-72533c18cac3">
+              <MeasureID>Cube Publication  Anzahl</MeasureID>
+            </Measure>
+          </Measures>
+        </MeasureGroup>
+      </MeasureGroups>
+    </Perspective>
+  </Perspectives>
+  <MeasureGroups>
+    <MeasureGroup dwd:design-time-name="fcac5900-eae6-43b5-9a19-00ac7cb2e456">
+      <ID>Cube Publication</ID>
+      <Name>Publication</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+      <State>Unprocessed</State>
+      <Measures>
+        <Measure dwd:design-time-name="44767e3f-06b0-4164-90b0-e1a71f137078">
+          <ID>Citings GS</ID>
+          <Name>Citings GS</Name>
+          <Source dwd:design-time-name="b0642410-67a0-422d-a1fb-0a57c08c1dae">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="ec427187-7892-4145-b50c-8d513f2433e8">
+              <TableID>dbo_cube_Publication</TableID>
+              <ColumnID>citingsGS</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="e036fc02-b622-425c-b727-2f12a105752e">
+          <ID>Citings ACM</ID>
+          <Name>Citings ACM</Name>
+          <Source dwd:design-time-name="f06a6681-973d-46ac-9f9e-6746ce5c5eee">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="721d8b60-1218-4e51-b6e3-46b7af07d2cf">
+              <TableID>dbo_cube_Publication</TableID>
+              <ColumnID>citingsACM</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="9c603be7-5378-4dc8-8e82-695677589e0f">
+          <ID>Citings ACM Self</ID>
+          <Name>Citings ACM Self</Name>
+          <Source dwd:design-time-name="7978d30f-996d-438e-b9df-23f850898e5c">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="f1948e96-82f2-4dd5-a041-3a7c7d395b89">
+              <TableID>dbo_cube_Publication</TableID>
+              <ColumnID>citingsACMSelf</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="de17c53a-ea7f-451e-8432-aff4f5ac15f5">
+          <ID>Cube Publication  Anzahl</ID>
+          <Name>Anzahl</Name>
+          <AggregateFunction>Count</AggregateFunction>
+          <Source dwd:design-time-name="03287bfe-68b7-4f11-9ef1-7e00f3ee4498">
+            <DataType>Integer</DataType>
+            <DataSize>4</DataSize>
+            <Source xsi:type="RowBinding" dwd:design-time-name="80d951cd-471d-441e-8f60-bf56ebaf4f8f">
+              <TableID>dbo_cube_Publication</TableID>
+            </Source>
+          </Source>
+        </Measure>
+      </Measures>
+      <StorageMode>Molap</StorageMode>
+      <ProcessingMode>Regular</ProcessingMode>
+      <Dimensions>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="f5e8682b-0cb4-4917-a2e6-12e181f2e6c4">
+          <CubeDimensionID>Cube Time</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="b5bddfc8-0a10-486a-86ca-688bbb5484f3">
+              <AttributeID>Year</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="cd74a8e6-c868-4d11-9589-6ec190490aec">
+                  <NullProcessing>UnknownMember</NullProcessing>
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="c222c9e5-812a-4aed-ab99-8ce0efae8620">
+                    <TableID>dbo_cube_Publication</TableID>
+                    <ColumnID>year</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+            <Attribute dwd:design-time-name="d0324366-31dd-4b5b-b634-634dd5346b2b">
+              <AttributeID>Decade</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="2a0b8b49-32b9-4eef-9649-e50ac2176679">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="80aafef4-d145-45fa-afc2-c032fc7ae5bf">
+                    <TableID>dbo_cube_Publication</TableID>
+                    <ColumnID>year</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="d2194fd9-a213-4ac5-9816-1354c17d6fb7">
+          <CubeDimensionID>Cube Venue Series</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="436b9442-3b1f-4e5c-813d-823efc180e5d">
+              <AttributeID>Id</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="beb07ba0-da26-44a5-aae4-a6d8da4c2d34">
+                  <NullProcessing>UnknownMember</NullProcessing>
+                  <DataType>BigInt</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="77e689fb-245b-4e34-b852-dbf8c5a10be4">
+                    <TableID>dbo_cube_Publication</TableID>
+                    <ColumnID>venueSeriesId</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="0687a45c-d969-4fe9-801a-03af59e169c0">
+          <CubeDimensionID>Cube Title</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="66729f52-3e2b-44b5-b2c0-670123b92814">
+              <AttributeID>Id</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="b4347f55-c58a-4a88-af33-f56b64a9515e">
+                  <NullProcessing>UnknownMember</NullProcessing>
+                  <DataType>BigInt</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="0dcf32d4-0d88-4a3d-81fd-986aa9afe5a1">
+                    <TableID>dbo_cube_Publication</TableID>
+                    <ColumnID>titleId</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="ManyToManyMeasureGroupDimension" dwd:design-time-name="1be152ac-7a35-400b-a54c-093e1f4c2818">
+          <CubeDimensionID>Cube Author</CubeDimensionID>
+          <MeasureGroupID>Cube Author Publication</MeasureGroupID>
+        </Dimension>
+        <Dimension xsi:type="DegenerateMeasureGroupDimension" dwd:design-time-name="24cb77c0-3821-496d-968f-758155943f9d">
+          <CubeDimensionID>Cube Publication</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="a1802b00-4c75-48de-ac5e-ece7d2f34ec0">
+              <AttributeID>Id</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="96a1a200-81c6-47dd-bc1f-1bb3996ee7cd">
+                  <DataType>BigInt</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="15415342-4859-48bd-a344-e31caabdaa5a">
+                    <TableID>dbo_cube_Publication</TableID>
+                    <ColumnID>id</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+      </Dimensions>
+      <Partitions />
+    </MeasureGroup>
+    <MeasureGroup dwd:design-time-name="7408f630-049f-46a8-849a-356049cab7c6">
+      <ID>Cube Author Publication</ID>
+      <Name>Author Publication</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+      <State>Unprocessed</State>
+      <Measures>
+        <Measure dwd:design-time-name="360859c1-879f-4c66-9248-0d058c33a846">
+          <ID>Cube Author Publication  Anzahl</ID>
+          <Name>Cube Author Publication  Anzahl</Name>
+          <AggregateFunction>Count</AggregateFunction>
+          <Source dwd:design-time-name="407dc91b-484f-4557-afee-1a15bdf73307">
+            <DataType>Integer</DataType>
+            <DataSize>4</DataSize>
+            <Source xsi:type="RowBinding" dwd:design-time-name="3d0fbbe9-462e-4f19-b1ce-783ae6724ba6">
+              <TableID>dbo_cube_AuthorPublication</TableID>
+            </Source>
+          </Source>
+        </Measure>
+      </Measures>
+      <StorageMode>Molap</StorageMode>
+      <ProcessingMode>Regular</ProcessingMode>
+      <Dimensions>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="b19f7de0-d646-4dd6-a090-f4f3e2f1a9af">
+          <CubeDimensionID>Cube Author</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="aee4e565-e17c-433e-9510-8b5808285830">
+              <AttributeID>Id</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="13dacac0-2606-4875-ae00-1e85612d6f2e">
+                  <DataType>BigInt</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="50c070ff-0b69-454c-91a6-ec9b0c54c979">
+                    <TableID>dbo_cube_AuthorPublication</TableID>
+                    <ColumnID>Author_Id</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="9155e904-a5aa-4dcb-b51b-b078766f8b4a">
+          <CubeDimensionID>Cube Publication</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="bf56cca1-7427-42d4-88be-696bec54f6f6">
+              <AttributeID>Id</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="aebc3b2a-b387-4cdb-951d-8dcf3c827aaa">
+                  <DataType>BigInt</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="57d22127-ed17-4707-a7f0-17c7296b84e6">
+                    <TableID>dbo_cube_AuthorPublication</TableID>
+                    <ColumnID>Publication_Id</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="ReferenceMeasureGroupDimension" dwd:design-time-name="cf7310f1-06ea-48bc-95ae-bb9d54b92a7b">
+          <CubeDimensionID>Cube Time</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="413cf218-84db-4dc8-a54b-0091b245bfd7">
+              <AttributeID>Year</AttributeID>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+          <IntermediateCubeDimensionID>Cube Publication</IntermediateCubeDimensionID>
+          <IntermediateGranularityAttributeID>Year</IntermediateGranularityAttributeID>
+          <Materialization>Regular</Materialization>
+        </Dimension>
+        <Dimension xsi:type="ReferenceMeasureGroupDimension" dwd:design-time-name="cfd28c20-3cc1-4b35-9b73-de52ee882b9a">
+          <CubeDimensionID>Cube Venue Series</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="afdc4858-0653-4a95-9daa-0afba2e1d0a9">
+              <AttributeID>Id</AttributeID>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+          <IntermediateCubeDimensionID>Cube Publication</IntermediateCubeDimensionID>
+          <IntermediateGranularityAttributeID>Cube Venue Series - Id</IntermediateGranularityAttributeID>
+          <Materialization>Regular</Materialization>
+        </Dimension>
+        <Dimension xsi:type="ReferenceMeasureGroupDimension" dwd:design-time-name="21adbb04-fe36-41a3-a509-78346d89ce6e">
+          <CubeDimensionID>Cube Title</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="845a3c57-89ef-4c3d-b3de-08132b89d089">
+              <AttributeID>Id</AttributeID>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+          <IntermediateCubeDimensionID>Cube Publication</IntermediateCubeDimensionID>
+          <IntermediateGranularityAttributeID>Cube Title - Id</IntermediateGranularityAttributeID>
+          <Materialization>Regular</Materialization>
+        </Dimension>
+      </Dimensions>
+      <Partitions />
+    </MeasureGroup>
+  </MeasureGroups>
+  <Source dwd:design-time-name="bd543a4e-d77a-4798-8ae9-9ef8f7f7f816">
+    <DataSourceViewID>dwhprak06</DataSourceViewID>
+  </Source>
+</Cube>

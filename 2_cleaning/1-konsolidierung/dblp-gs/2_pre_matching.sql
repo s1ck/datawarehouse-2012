@@ -28,8 +28,3 @@ INSERT INTO [dbo].[dblp_gs] (dblp_id, gs_id, _Similarity, _Confidence, _Similari
 		LOWER(dblp.title)
 	NOT IN ('introduction','preface','editorial','foreword')
 )
-
-/*
-TODO:
-- exact match on title AND publication year (think first)
-*/

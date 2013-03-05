@@ -1,0 +1,81 @@
+﻿<Project xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0">
+  <ProductVersion>10.0.5512.0</ProductVersion>
+  <SchemaVersion>9.0.2.10</SchemaVersion>
+  <State>$base64$PFNvdXJjZUNvbnRyb2xJbmZvIHhtbG5zOnhzZD0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEiIHhtbG5zOnhzaT0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEtaW5zdGFuY2UiIHhtbG5zOmRkbDI9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDAzL2VuZ2luZS8yIiB4bWxuczpkZGwyXzI9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDAzL2VuZ2luZS8yLzIiIHhtbG5zOmRkbDEwMF8xMDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDA4L2VuZ2luZS8xMDAvMTAwIiB4bWxuczpkd2Q9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vRGF0YVdhcmVob3VzZS9EZXNpZ25lci8xLjAiPg0KICA8RW5hYmxlZD5mYWxzZTwvRW5hYmxlZD4NCiAgPFByb2plY3ROYW1lPjwvUHJvamVjdE5hbWU+DQogIDxBdXhQYXRoPjwvQXV4UGF0aD4NCiAgPExvY2FsUGF0aD48L0xvY2FsUGF0aD4NCiAgPFByb3ZpZGVyPjwvUHJvdmlkZXI+DQo8L1NvdXJjZUNvbnRyb2xJbmZvPg==</State>
+  <Database>
+    <Name>Cube.database</Name>
+    <FullPath>Cube.database</FullPath>
+  </Database>
+  <Cubes>
+    <ProjectItem>
+      <Name>dwhprak06.cube</Name>
+      <FullPath>dwhprak06.cube</FullPath>
+      <Dependencies>
+        <ProjectItem>
+          <Name>dwhprak06.partitions</Name>
+          <FullPath>dwhprak06.partitions</FullPath>
+        </ProjectItem>
+      </Dependencies>
+    </ProjectItem>
+  </Cubes>
+  <Dimensions>
+    <ProjectItem>
+      <Name>Cube Time.dim</Name>
+      <FullPath>Cube Time.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Cube Venue Series.dim</Name>
+      <FullPath>Cube Venue Series.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Cube Title.dim</Name>
+      <FullPath>Cube Title.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Cube Author.dim</Name>
+      <FullPath>Cube Author.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Cube Author Publication.dim</Name>
+      <FullPath>Cube Author Publication.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Cube Publication.dim</Name>
+      <FullPath>Cube Publication.dim</FullPath>
+    </ProjectItem>
+  </Dimensions>
+  <DataSources>
+    <ProjectItem>
+      <Name>dwhprak06.ds</Name>
+      <FullPath>dwhprak06.ds</FullPath>
+    </ProjectItem>
+  </DataSources>
+  <DataSourceViews>
+    <ProjectItem>
+      <Name>dwhprak06.dsv</Name>
+      <FullPath>dwhprak06.dsv</FullPath>
+    </ProjectItem>
+  </DataSourceViews>
+  <Configurations>
+    <Configuration>
+      <Name>Development</Name>
+      <Options>
+        <ConnectionMappings>
+          <ConfigurationSetting>
+            <Id>dwhprak06</Id>
+            <Name>dwhprak06</Name>
+            <Value xsi:type="xsd:string">Provider=SQLOLEDB.1;Data Source=dbserv1;Integrated Security=SSPI;Initial Catalog=dwhprak06</Value>
+          </ConfigurationSetting>
+        </ConnectionMappings>
+        <ConnectionSecurityMappings>
+          <ConfigurationSetting>
+            <Id>dwhprak06</Id>
+            <Name>dwhprak06</Name>
+            <Value xsi:type="xsd:int">0</Value>
+          </ConfigurationSetting>
+        </ConnectionSecurityMappings>
+        <DeploymentServerEdition>Enterprise</DeploymentServerEdition>
+      </Options>
+    </Configuration>
+  </Configurations>
+</Project>

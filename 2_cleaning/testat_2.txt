@@ -49,7 +49,7 @@ konsolidierung_dblp-gs.dtsx
 0_helpers.sql		Queries zur Selektion der DBLP Publikation nach Venue Series
 1_prepare.sql		Anlegen der Mapping Tabelle
 			Anlegen der Views zur Selektion der GS Publikation nach Venue Series
-			Anlegen des Validation View DBLP_GS_VALIDATION_VIEW
+			Anlegen des Validation View DBLP_GS_VALIDATION_VIEW (ORDER BY sim_title)
 2_pre_matching.sql	Exact Match auf Publikations-Titeln
 
 [Ergebnis:]

@@ -1,0 +1,177 @@
+﻿<DataSourceView xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="d916af08-b1de-4cdb-9128-9acfa70ed91b" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>dwhprak06</ID>
+  <Name>dwhprak06</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:CurrentLayout</Name>
+      <Value>_ALL_TABLES_</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:SchemaRestriction</Name>
+      <Value></Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:RetrieveRelationships</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:Layouts</Name>
+      <Value>
+        <Layouts xmlns="">
+          <Diagram>
+            <Name>_ALL_TABLES_</Name>
+            <DiagramLayout />
+            <ShowRelationshipNames>False</ShowRelationshipNames>
+            <UseDiagramDefaultLayout>True</UseDiagramDefaultLayout>
+            <DiagramViewPortLeft>0</DiagramViewPortLeft>
+            <DiagramViewPortTop>0</DiagramViewPortTop>
+            <DiagramBoundingLeft>0</DiagramBoundingLeft>
+            <DiagramBoundingTop>0</DiagramBoundingTop>
+            <DiagramZoom>100</DiagramZoom>
+          </Diagram>
+        </Layouts>
+      </Value>
+    </Annotation>
+  </Annotations>
+  <DataSourceID>dwhprak06</DataSourceID>
+  <Schema>
+    <xs:schema id="dwhprak06" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop">
+      <xs:element name="dwhprak06" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:design-time-name="0c4f267f-e26d-49d4-b640-82ae8c3a23bc">
+        <xs:complexType>
+          <xs:choice minOccurs="0" maxOccurs="unbounded">
+            <xs:element name="dbo_cube_Publication" msprop:FriendlyName="cube_Publication" msprop:DbSchemaName="dbo" msprop:DbTableName="cube_Publication" msprop:design-time-name="c4ee0db9-d815-457d-b819-246c54461252" msprop:TableType="Table">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:FriendlyName="id" msprop:DbColumnName="id" msprop:design-time-name="f3840623-bbee-45fc-9fdd-f967eb2dfde9" type="xs:long" />
+                  <xs:element name="titleId" msprop:FriendlyName="titleId" msprop:DbColumnName="titleId" msprop:design-time-name="6821d4f4-9cab-4008-99f9-9433807849e7" type="xs:long" minOccurs="0" />
+                  <xs:element name="year" msprop:FriendlyName="year" msprop:DbColumnName="year" msprop:design-time-name="df808d7a-5f71-4b21-9b6d-7acfd7372cb4" type="xs:int" minOccurs="0" />
+                  <xs:element name="venueSeriesId" msprop:FriendlyName="venueSeriesId" msprop:DbColumnName="venueSeriesId" msprop:design-time-name="d9ff8be8-7b2d-4a0e-9f51-5aa1544a5105" type="xs:long" minOccurs="0" />
+                  <xs:element name="citingsGS" msprop:FriendlyName="citingsGS" msprop:DbColumnName="citingsGS" msprop:design-time-name="d03a13b5-817a-4e4a-98da-21ad166f03de" type="xs:int" minOccurs="0" />
+                  <xs:element name="citingsACM" msprop:FriendlyName="citingsACM" msprop:DbColumnName="citingsACM" msprop:design-time-name="71cca6e9-a5f9-4711-9084-68ca67dc9f5a" type="xs:int" minOccurs="0" />
+                  <xs:element name="citingsACMSelf" msprop:FriendlyName="citingsACMSelf" msprop:DbColumnName="citingsACMSelf" msprop:design-time-name="bfc36481-66fc-4406-8712-0afe77ff7a2c" type="xs:int" minOccurs="0" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_cube_Time" msprop:FriendlyName="cube_Time" msprop:DbSchemaName="dbo" msprop:DbTableName="cube_Time" msprop:design-time-name="b8830fba-71f8-4295-8061-44454a6e6c7f" msprop:TableType="Table">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="year" msprop:FriendlyName="year" msprop:DbColumnName="year" msprop:design-time-name="5ea03105-bdd8-4698-8a62-b436d8eeb8a5" type="xs:int" />
+                  <xs:element name="decade" msprop:FriendlyName="decade" msprop:DbColumnName="decade" msprop:design-time-name="dd8877a2-e40f-4dc1-9a7a-df828d0a7f8f" type="xs:int" minOccurs="0" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_cube_Title" msprop:FriendlyName="cube_Title" msprop:DbSchemaName="dbo" msprop:DbTableName="cube_Title" msprop:design-time-name="039804ea-9cc6-4906-a967-e1c75dd1deb5" msprop:TableType="Table">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="id" msprop:FriendlyName="id" msprop:DbColumnName="id" msprop:design-time-name="49d7b51f-cd64-4c8a-8c8e-6049c445287e" type="xs:long" />
+                  <xs:element name="title" msprop:FriendlyName="title" msprop:DbColumnName="title" msprop:design-time-name="cd674cfe-676e-44ea-8690-5adff46053ee" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="255" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_cube_AuthorPublication" msprop:FriendlyName="cube_AuthorPublication" msprop:DbSchemaName="dbo" msprop:DbTableName="cube_AuthorPublication" msprop:design-time-name="8636d63b-2a1a-4ee7-a117-f3024287c906" msprop:TableType="Table">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="Publication_Id" msprop:FriendlyName="Publication_Id" msprop:DbColumnName="Publication_Id" msprop:design-time-name="9b5b1b2d-a0e7-4df8-a07d-6f6376a88b29" type="xs:long" />
+                  <xs:element name="Author_Id" msprop:FriendlyName="Author_Id" msprop:DbColumnName="Author_Id" msprop:design-time-name="e2459145-30e1-4976-ab4a-c6b8869afa32" type="xs:long" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_cube_VenueSeries" msprop:FriendlyName="cube_VenueSeries" msprop:DbSchemaName="dbo" msprop:DbTableName="cube_VenueSeries" msprop:design-time-name="bc95cd12-de57-4265-9823-41290d5fb662" msprop:TableType="Table">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="id" msprop:FriendlyName="id" msprop:DbColumnName="id" msprop:design-time-name="25d20b17-a0e7-42dd-bfcb-0fbec64e84f4" type="xs:long" />
+                  <xs:element name="description" msprop:FriendlyName="description" msprop:DbColumnName="description" msprop:design-time-name="900683d4-55be-4a6f-bf27-a9e8431418b1" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="255" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_cube_Author" msprop:FriendlyName="cube_Author" msprop:DbSchemaName="dbo" msprop:DbTableName="cube_Author" msprop:design-time-name="c4ec1d67-399a-4197-88d2-75384756a53f" msprop:TableType="Table">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="id" msprop:FriendlyName="id" msprop:DbColumnName="id" msprop:design-time-name="f36fa245-be1a-4162-b86c-b2fbf0675d32" type="xs:long" />
+                  <xs:element name="name" msprop:FriendlyName="name" msprop:DbColumnName="name" msprop:design-time-name="eaec6cbb-4621-4a96-a738-929d94732dfb" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="255" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="institution" msprop:FriendlyName="institution" msprop:DbColumnName="institution" msprop:design-time-name="ae14c927-cb12-4e9f-9f6a-3baa591b4c88" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="255" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+        <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_cube_Publication" />
+          <xs:field xpath="id" />
+        </xs:unique>
+        <xs:unique name="dbo_cube_Time_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_cube_Time" />
+          <xs:field xpath="year" />
+        </xs:unique>
+        <xs:unique name="dbo_cube_Title_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_cube_Title" />
+          <xs:field xpath="id" />
+        </xs:unique>
+        <xs:unique name="dbo_cube_AuthorPublication_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_cube_AuthorPublication" />
+          <xs:field xpath="Publication_Id" />
+          <xs:field xpath="Author_Id" />
+        </xs:unique>
+        <xs:unique name="dbo_cube_VenueSeries_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_cube_VenueSeries" />
+          <xs:field xpath="id" />
+        </xs:unique>
+        <xs:unique name="dbo_cube_Author_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_cube_Author" />
+          <xs:field xpath="id" />
+        </xs:unique>
+        <xs:keyref name="fk_author" refer="dbo_cube_Author_Constraint1">
+          <xs:selector xpath=".//dbo_cube_AuthorPublication" />
+          <xs:field xpath="Author_Id" />
+        </xs:keyref>
+        <xs:keyref name="fk_publication" refer="Constraint1">
+          <xs:selector xpath=".//dbo_cube_AuthorPublication" />
+          <xs:field xpath="Publication_Id" />
+        </xs:keyref>
+        <xs:keyref name="fk_title" refer="dbo_cube_Title_Constraint1">
+          <xs:selector xpath=".//dbo_cube_Publication" />
+          <xs:field xpath="titleId" />
+        </xs:keyref>
+        <xs:keyref name="fk_time" refer="dbo_cube_Time_Constraint1">
+          <xs:selector xpath=".//dbo_cube_Publication" />
+          <xs:field xpath="year" />
+        </xs:keyref>
+        <xs:keyref name="fk_venueseries" refer="dbo_cube_VenueSeries_Constraint1">
+          <xs:selector xpath=".//dbo_cube_Publication" />
+          <xs:field xpath="venueSeriesId" />
+        </xs:keyref>
+      </xs:element>
+    </xs:schema>
+    <diffgr:diffgram xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:diffgr="urn:schemas-microsoft-com:xml-diffgram-v1" />
+  </Schema>
+</DataSourceView>

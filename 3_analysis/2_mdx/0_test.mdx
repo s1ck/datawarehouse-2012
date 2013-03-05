@@ -1,0 +1,9 @@
+SELECT
+	[Measures].[Anzahl] ON 0,
+ORDER 
+	(
+		[Venue Series].[Description].MEMBERS, 
+		[Measures].[Anzahl], DESC
+	) ON 1
+FROM
+	[dwhprak06]

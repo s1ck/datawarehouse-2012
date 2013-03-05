@@ -1,0 +1,45 @@
+﻿<Cube xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="f90f7be6-d0e4-4979-b618-67baa8cc4e60" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>dwhprak06</ID>
+  <MeasureGroups>
+    <MeasureGroup>
+      <ID>Cube Publication</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="a9b92408-1e53-4681-9810-1ba93f294732">
+          <ID>Cube Publication</ID>
+          <Name>Cube Publication</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="42fb224f-4591-4386-b282-3dc480da8a5f">
+            <DataSourceViewID>dwhprak06</DataSourceViewID>
+            <TableID>dbo_cube_Publication</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+    <MeasureGroup>
+      <ID>Cube Author Publication</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="028863e9-ffa5-4124-87ed-d8ec22efbbf4">
+          <ID>Cube Author Publication</ID>
+          <Name>Cube Author Publication</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="28d32fda-52e8-4794-b6c3-4bb2d27c1ede">
+            <DataSourceViewID>dwhprak06</DataSourceViewID>
+            <TableID>dbo_cube_AuthorPublication</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+  </MeasureGroups>
+</Cube>

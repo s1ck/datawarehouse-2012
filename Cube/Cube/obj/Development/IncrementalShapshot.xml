@@ -1,0 +1,96 @@
+﻿<DeploymentSnapshot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0">
+  <Target>
+    <Database>dwhprak06</Database>
+    <Server>dbserv1</Server>
+    <ConnectionString>DataSource=dbserv1;Timeout=0</ConnectionString>
+  </Target>
+  <Options>
+    <TransactionalDeployment>false</TransactionalDeployment>
+    <PartitionDeployment>DeployPartitions</PartitionDeployment>
+    <RoleDeployment>DeployRolesRetainMembers</RoleDeployment>
+    <ProcessingOption>DoNotProcess</ProcessingOption>
+    <OutputScript></OutputScript>
+    <ImpactAnalysisFile></ImpactAnalysisFile>
+    <ConfigurationSettingsDeployment>Deploy</ConfigurationSettingsDeployment>
+    <OptimizationSettingsDeployment>Deploy</OptimizationSettingsDeployment>
+    <WriteBackTableCreation>UseExisting</WriteBackTableCreation>
+  </Options>
+  <Snapshot>
+    <ObjectSnapshots>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.RelationalDataSource</Type>
+        <TimeStamp>STt+dAhmsTfR33I/12L15fwktPQ=04.03.2013 19:31:3904.03.2013 19:29:31</TimeStamp>
+        <ID>
+          <String>dwhprak06</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.DataSourceView</Type>
+        <TimeStamp>0yhRtIs0YOzUzJvG1jPymyrpGSo=04.03.2013 19:29:5104.03.2013 19:29:50</TimeStamp>
+        <ID>
+          <String>dwhprak06</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>62uVSHfNmWpLcDydvvi8V82DP5c=05.03.2013 10:56:2705.03.2013 10:56:17</TimeStamp>
+        <ID>
+          <String>Cube Venue Series</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>gksKGTgQUmv7XSTiXqaCcDUMaVs=05.03.2013 11:04:0105.03.2013 11:03:53</TimeStamp>
+        <ID>
+          <String>Cube Title</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>teMWXmefnSkhyEs5UT2MPRtc9L4=05.03.2013 11:10:1605.03.2013 11:10:04</TimeStamp>
+        <ID>
+          <String>Cube Author</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>eNHNDcXyyKvpYMUAJL8YbsZrqTk=05.03.2013 11:21:2705.03.2013 11:21:10</TimeStamp>
+        <ID>
+          <String>Cube Author Publication</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>jiVs8Pb3KdwLkH68SdxVy7h/Ywk=05.03.2013 11:24:0305.03.2013 11:24:02</TimeStamp>
+        <ID>
+          <String>Cube Publication</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>UW/qz8L7xuJm3AKFACguNLQw2iM=05.03.2013 12:31:5304.03.2013 19:30:11</TimeStamp>
+        <ID>
+          <String>Cube Time</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Cube</Type>
+        <TimeStamp>qx9P8+HgGWozlK742k43VqXfb6A=05.03.2013 12:48:3105.03.2013 10:50:555ROmiU9Nc/O44rkLrYhX20TAVoA=05.03.2013 11:24:0405.03.2013 10:50:56</TimeStamp>
+        <ID>
+          <String>dwhprak06</String>
+        </ID>
+      </ObjectSnapshot>
+    </ObjectSnapshots>
+    <DatabaseSnapshot>
+      <Type>Microsoft.AnalysisServices.Database</Type>
+      <TimeStamp>YodLGPz9hgST60cTAd4koaiJSPI=04.03.2013 19:28:4004.03.2013 19:28:40</TimeStamp>
+      <ID>
+        <String>dwhprak06</String>
+      </ID>
+    </DatabaseSnapshot>
+    <Granularity>Coarse</Granularity>
+  </Snapshot>
+  <AssemblyLocations />
+  <ProcessingComplete>true</ProcessingComplete>
+  <LastDeployed>2013-03-05T11:48:47.09Z</LastDeployed>
+</DeploymentSnapshot>

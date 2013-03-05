@@ -30,7 +30,7 @@ BEGIN
 		BEGIN
 			SET @i = 1
 			SET @mail =[dbo].[get_part](@text, @i, ' ', 1)
-			WHILE CHARINDEX('@', @mail) = 0
+			WHILE CHARINDEX('@', @mail) = 0  -- as long as there is no e-mail address in the considered part
 			BEGIN
 				SET @i = @i + 1			
 				SET @mail =[dbo].[get_part](@text, @i, ' ', 1)

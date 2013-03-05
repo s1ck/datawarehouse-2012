@@ -62,5 +62,10 @@
       <FullPath>extraktion_acm-self-citings.dtsx</FullPath>
       <References />
     </DtsPackage>
+    <DtsPackage FormatVersion="3">
+      <Name>star_transformation.dtsx</Name>
+      <FullPath>star_transformation.dtsx</FullPath>
+      <References />
+    </DtsPackage>
   </DTSPackages>
 </Project>
