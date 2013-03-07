@@ -1,5 +1,11 @@
 use dwhprak06
 
+-- updates
+--UPDATE cube_Publication SET year = -1 WHERE year IS NULL;
+--UPDATE cube_Publication SET venueSeriesId = -1 WHERE venueSeriesId IS NULL;
+--UPDATE cube_Publication SET titleId = -1 WHERE titleId IS NULL;
+	
+
 -- Foreign Keys
 
 -- AuthorPublication -> Author

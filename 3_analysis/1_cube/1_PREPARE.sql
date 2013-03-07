@@ -63,6 +63,13 @@ CREATE TABLE cube_Publication (
 	citingsACMSelf INT DEFAULT 0,
 	PRIMARY KEY (id));
 	
+-- values to avoid NULL in fact table
+--INSERT INTO cube_Author (id, institution, name) VALUES (-1, 'undefined', 'undefined');
+--INSERT INTO cube_Title (id, title) VALUES (-1, 'undefined');
+--INSERT INTO cube_VenueSeries (id, description) VALUES (-1, 'undefined');
+--INSERT INTO cube_Time (year, decade) VALUES (-1, -1);
+
+	
 
 
 

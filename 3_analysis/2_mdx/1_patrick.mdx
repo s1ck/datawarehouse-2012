@@ -1,0 +1,136 @@
+-- 1) Liste der fuenf am haeufigsten zitierten Publikationen fuer jede der
+--    betrachteten Venue-Serien.
+
+-- ACM (ACM Trans. Database Syst.)
+WITH
+	MEMBER [Measures].[Citings All] AS 
+	'[Measures].[Citings ACM] + [Measures].[Citings GS]'
+SELECT
+	[Measures].[Citings All] ON 0,
+	Topcount(
+		[Title].[Title].Children,
+		5,
+		[Measures].[Citings All]
+	) ON 1
+FROM
+	Dwhprak00
+WHERE
+	[VenueSeries].[Description].[ACM Trans. Database Syst.]
+
+
+-- SIGMOD Record
+
+WITH
+	MEMBER [Measures].[Citings All] AS 
+	'[Measures].[Citings ACM] + [Measures].[Citings GS]'
+SELECT
+	[Measures].[Citings All] ON 0,
+	Topcount(
+		[Title].[Title].Children,
+		5,
+		[Measures].[Citings All]
+	) ON 1
+FROM
+	Dwhprak00
+WHERE
+	[VenueSeries].[Description].[SIGMOD Record]	
+	
+-- SIGMOD Conference
+
+WITH
+	MEMBER [Measures].[Citings All] AS 
+	'[Measures].[Citings ACM] + [Measures].[Citings GS]'
+SELECT
+	[Measures].[Citings All] ON 0,
+	Topcount(
+		[Title].[Title].Children,
+		5,
+		[Measures].[Citings All]
+	) ON 1
+FROM
+	Dwhprak00
+WHERE	
+	[VenueSeries].[Description].[SIGMOD Conference]
+
+-- VLDB
+WITH
+	MEMBER [Measures].[Citings All] AS 
+	'[Measures].[Citings ACM] + [Measures].[Citings GS]'
+SELECT
+	[Measures].[Citings All] ON 0,
+	Topcount(
+		[Title].[Title].Children,
+		5,
+		[Measures].[Citings All]
+	) ON 1
+FROM
+	Dwhprak00
+WHERE
+	[VenueSeries].[Description].[VLDB]
+
+-- VLDB J.
+
+WITH
+	MEMBER [Measures].[Citings All] AS 
+	'[Measures].[Citings ACM] + [Measures].[Citings GS]'
+SELECT
+	[Measures].[Citings All] ON 0,
+	Topcount(
+		[Title].[Title].Children,
+		5,
+		[Measures].[Citings All]
+	) ON 1
+FROM
+	Dwhprak00
+WHERE	
+	[VenueSeries].[Description].[VLDB J.]
+
+-- 2) Durchschnittliche Zitierungszahl einer Publikation pro Venue-Series.
+
+
+-- 3) Liste der zehn am häufigsten zitierten Institutionen.
+
+-- 4) Liste aller Publikationen des Autoren 'Erhard Rahm', absteigend
+--    sortiert nach der Zitierungszahl.
+
+--GO
+-- 5) Zeitlicher Verlauf der durchschnittlichen Zitierungszahlen für jede
+--    Venue-Serie.
+/*
+WITH
+	MEMBER [Measures].[Citings All] AS 
+	'[Measures].[Citings ACM] + [Measures].[Citings GS]'
+SELECT
+	[Time].[Decade].MEMBERS ON 0,
+	ORDER(
+		[VenueSeries].[Description].MEMBERS,
+		[Measures].[Citings All], DESC) ON 1
+FROM
+	Dwhprak00
+WHERE
+	[Measures].[Citings All]
+
+GO
+
+WITH
+	MEMBER [Measures].[Citings All] AS 
+	[Measures].[Citings ACM] + [Measures].[Citings GS]
+	SET [Citings All Set] AS
+	{[Measures].[Citings ACM], [Measures].[Citings GS]}
+	MEMBER [Measures].[Citings AVG] AS
+		AVG(
+			Descendants(
+				[VenueSeries].[Description].CurrentMember,
+				[Measures].[Citings All]
+			)
+		)
+SELECT
+	[Time].[Decade].MEMBERS ON 0,
+	ORDER(
+		[VenueSeries].[Description].MEMBERS,
+		[Measures].[Citings AVG], DESC) ON 1
+FROM
+	Dwhprak00
+WHERE
+	[Measures].[Citings AVG]
+*/

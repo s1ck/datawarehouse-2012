@@ -40,13 +40,13 @@ SELECT
 	,ven.year as year	
 FROM
 	dblp_publication pub
---LEFT OUTER JOIN
-INNER JOIN
+LEFT OUTER JOIN
+--INNER JOIN
 	dblp_venue_publication venpub
 ON
 	pub.id = venpub.publication_id
---LEFT OUTER JOIN
-INNER JOIN
+LEFT OUTER JOIN
+--INNER JOIN
 	dblp_venue ven
 ON
 	venpub.venue_id = ven.id
@@ -62,3 +62,20 @@ INNER JOIN
 	cube_Publication cubepub
 ON
 	authpub.publication_id = cubepub.titleId
+	
+/*
+INSERT INTO cube_AuthorPublication (Author_Id, Publication_Id)
+SELECT
+	-1,
+	pub.id as Publication_Id
+FROM
+	cube_Publication pub
+WHERE 
+	pub.titleId NOT IN (
+	SELECT 
+		authpub.publication_id
+	FROM
+		dblp_author_publication authpub
+)
+*/
+		

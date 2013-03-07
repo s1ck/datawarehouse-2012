@@ -33,6 +33,13 @@
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>UW/qz8L7xuJm3AKFACguNLQw2iM=05.03.2013 12:31:5304.03.2013 19:30:11</TimeStamp>
+        <ID>
+          <String>Cube Time</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
         <TimeStamp>62uVSHfNmWpLcDydvvi8V82DP5c=05.03.2013 10:56:2705.03.2013 10:56:17</TimeStamp>
         <ID>
           <String>Cube Venue Series</String>
@@ -67,13 +74,6 @@
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
-        <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>UW/qz8L7xuJm3AKFACguNLQw2iM=05.03.2013 12:31:5304.03.2013 19:30:11</TimeStamp>
-        <ID>
-          <String>Cube Time</String>
-        </ID>
-      </ObjectSnapshot>
-      <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Cube</Type>
         <TimeStamp>qx9P8+HgGWozlK742k43VqXfb6A=05.03.2013 12:48:3105.03.2013 10:50:555ROmiU9Nc/O44rkLrYhX20TAVoA=05.03.2013 11:24:0405.03.2013 10:50:56</TimeStamp>
         <ID>
@@ -92,5 +92,5 @@
   </Snapshot>
   <AssemblyLocations />
   <ProcessingComplete>true</ProcessingComplete>
-  <LastDeployed>2013-03-05T11:48:47.09Z</LastDeployed>
+  <LastDeployed>2013-03-06T10:59:08.176667Z</LastDeployed>
 </DeploymentSnapshot>

@@ -1,0 +1,162 @@
+-- 1. Liste der fünf am häufigsten zitierten Publikationen für jede der betrachteten Venue-Serien.
+
+-- siehe 1_patrick.mdx
+
+-- 2. Durchschnittliche Zitierungszahl einer Publikation pro Venue-Series.
+
+-- SQL
+/*
+SELECT
+	venser.description, AVG(pub.citingsACM + pub.citingsGS) as cnt	
+FROM
+	cube_Publication pub
+INNER JOIN
+	cube_VenueSeries venser
+ON
+	pub.venueSeriesId = venser.id
+GROUP BY
+	venser.description
+ORDER BY
+	cnt DESC
+*/
+
+-- MDX
+
+WITH 
+	MEMBER [Measures].[Avg Citation Count] AS
+	(
+		([VenueSeries].[Description].CurrentMember, [Measures].[Citings ACM])
+		+
+		([VenueSeries].[Description].CurrentMember, [Measures].[Citings GS])
+	)
+	/
+	([VenueSeries].[Description].CurrentMember, [Measures].[Publication  Anzahl])
+	,format_string="#.00;;0"
+SELECT
+	[Measures].[Avg Citation Count] on 0,
+	ORDER (
+		[VenueSeries].[Description].Children,
+		[Measures].[Avg Citation Count], DESC
+	) on 1
+FROM
+	[dwhprak00]
+
+-- 3. Liste der zehn am häufigsten zitierten Institutionen.
+
+-- SQL
+/*
+SELECT
+	auth.institution, SUM(pub.citingsACM + pub.citingsGS) as cnt
+FROM
+	cube_Publication pub
+INNER JOIN
+	cube_AuthorPublication authpub
+ON
+	authpub.Publication_Id = pub.id
+INNER JOIN
+	cube_Author auth
+ON
+	auth.id = authpub.Author_Id
+GROUP BY
+	auth.institution
+ORDER BY
+	cnt DESC
+*/
+
+-- MDX
+
+WITH
+	MEMBER [Measures].[Citings Count] AS
+	SUM ({
+		([Author].[Institution].CurrentMember, [Measures].[Citings ACM]),
+		([Author].[Institution].CurrentMember, [Measures].[Citings GS])
+	})
+SELECT
+	[Measures].[Citings Count] ON 0,
+TOPCOUNT(
+	ORDER 
+	(
+		[Author].[Institution].Children, 
+		[Measures].[Citings Count], DESC
+	)
+	, 10
+) ON 1
+FROM
+	[dwhprak00]
+
+-- 4. Liste aller Publikationen des Autoren ‘Erhard Rahm’, absteigend sortiert nach der Zitierungszahl
+
+-- SQL
+/*
+SELECT
+	auth.name, title.title, SUM(pub.citingsACM + pub.citingsGS) as cnt
+FROM
+	cube_Publication pub
+INNER JOIN
+	cube_AuthorPublication authpub
+ON
+	authpub.Publication_Id = pub.id
+INNER JOIN
+	cube_Author auth
+ON
+	auth.id = authpub.Author_Id
+INNER JOIN
+	cube_Title as title
+ON
+	pub.titleId = title.id
+GROUP BY
+	auth.name, title.title
+HAVING	
+	auth.name = 'Erhard Rahm'
+ORDER BY
+	cnt DESC
+*/
+
+-- MDX
+
+WITH 
+	MEMBER [Measures].[Citings Count] AS	
+	([Title].[Title].CurrentMember, [Measures].[Citings ACM])
+	+
+	([Title].[Title].CurrentMember, [Measures].[Citings GS])	
+SELECT
+	[Measures].[Citings Count] ON 0,
+ORDER (	
+		NONEMPTY([Title].[Title].Children),
+		[Measures].[Citings Count], DESC)
+	on 1		
+FROM
+	[dwhprak00]
+WHERE
+	[Author].[Name].[Erhard Rahm]
+	
+-- 5. Zeitlicher Verlauf der durchschnittlichen Zitierungszahlen für jede Venue-Serie.
+
+WITH 
+	MEMBER [Measures].[Avg Citation] AS		
+	(
+		([Time].[Year].CurrentMember, [Measures].[Citings ACM])
+		+
+		([Time].[Year].CurrentMember, [Measures].[Citings GS])
+	)
+	/
+	([Time].[Year].CurrentMember, [Measures].[Publication  Anzahl])
+	--,format_string="#.00;;0"
+	,format_string="Fixed"
+	
+SELECT	
+	{[Time].[Year].[1975] : [Time].[Year].[2006]} on 0,
+	--[Time].[Decade].Children on 0,	
+	{
+		[VenueSeries].[Description].[VLDB], 
+		[VenueSeries].[Description].[SIGMOD Conference],
+		[VenueSeries].[Description].[VLDB J.],
+		[VenueSeries].[Description].[ACM Trans. Database Syst.],
+		[VenueSeries].[Description].[SIGMOD Recoed]
+	} on 1
+FROM
+	[Dwhprak00]
+WHERE
+	[Measures].[Avg Citation]
+	
+	
