@@ -25,8 +25,8 @@ ORDER BY
 WITH 
 	MEMBER [Measures].[Avg Citation Count] AS
 	(
-		([VenueSeries].[Description].CurrentMember, [Measures].[Citings ACM])
-		+
+		--([VenueSeries].[Description].CurrentMember, [Measures].[Citings ACM])
+		--+
 		([VenueSeries].[Description].CurrentMember, [Measures].[Citings GS])
 	)
 	/
@@ -68,7 +68,7 @@ ORDER BY
 WITH
 	MEMBER [Measures].[Citings Count] AS
 	SUM ({
-		([Author].[Institution].CurrentMember, [Measures].[Citings ACM]),
+		--([Author].[Institution].CurrentMember, [Measures].[Citings ACM]),
 		([Author].[Institution].CurrentMember, [Measures].[Citings GS])
 	})
 SELECT
@@ -116,8 +116,8 @@ ORDER BY
 
 WITH 
 	MEMBER [Measures].[Citings Count] AS	
-	([Title].[Title].CurrentMember, [Measures].[Citings ACM])
-	+
+	--([Title].[Title].CurrentMember, [Measures].[Citings ACM])
+	--+
 	([Title].[Title].CurrentMember, [Measures].[Citings GS])	
 SELECT
 	[Measures].[Citings Count] ON 0,
@@ -135,18 +135,18 @@ WHERE
 WITH 
 	MEMBER [Measures].[Avg Citation] AS		
 	(
-		([Time].[Year].CurrentMember, [Measures].[Citings ACM])
-		+
-		([Time].[Year].CurrentMember, [Measures].[Citings GS])
+		--([Time].[Year].CurrentMember, [Measures].[Citings ACM])
+		--+
+		([Time].[Decade].CurrentMember, [Measures].[Citings GS])
 	)
 	/
-	([Time].[Year].CurrentMember, [Measures].[Publication  Anzahl])
+	([Time].[Decade].CurrentMember, [Measures].[Publication  Anzahl])
 	--,format_string="#.00;;0"
 	,format_string="Fixed"
 	
 SELECT	
-	{[Time].[Year].[1975] : [Time].[Year].[2006]} on 0,
-	--[Time].[Decade].Children on 0,	
+	--{[Time].[Year].[1975] : [Time].[Year].[2006]} on 0,
+	[Time].[Decade].Children on 0,	
 	{
 		[VenueSeries].[Description].[VLDB], 
 		[VenueSeries].[Description].[SIGMOD Conference],

@@ -62,20 +62,4 @@ INNER JOIN
 	cube_Publication cubepub
 ON
 	authpub.publication_id = cubepub.titleId
-	
-/*
-INSERT INTO cube_AuthorPublication (Author_Id, Publication_Id)
-SELECT
-	-1,
-	pub.id as Publication_Id
-FROM
-	cube_Publication pub
-WHERE 
-	pub.titleId NOT IN (
-	SELECT 
-		authpub.publication_id
-	FROM
-		dblp_author_publication authpub
-)
-*/
 		

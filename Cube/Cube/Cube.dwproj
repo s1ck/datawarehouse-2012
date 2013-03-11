@@ -55,7 +55,17 @@
       <Name>dwhprak06.dsv</Name>
       <FullPath>dwhprak06.dsv</FullPath>
     </ProjectItem>
+    <ProjectItem>
+      <Name>AssoRegeln.dsv</Name>
+      <FullPath>AssoRegeln.dsv</FullPath>
+    </ProjectItem>
   </DataSourceViews>
+  <MiningModels>
+    <ProjectItem>
+      <Name>Mine Asso Regeln.dmm</Name>
+      <FullPath>Mine Asso Regeln.dmm</FullPath>
+    </ProjectItem>
+  </MiningModels>
   <Configurations>
     <Configuration>
       <Name>Development</Name>

@@ -67,5 +67,10 @@
       <FullPath>star_transformation.dtsx</FullPath>
       <References />
     </DtsPackage>
+    <DtsPackage FormatVersion="3">
+      <Name>asso_regeln.dtsx</Name>
+      <FullPath>asso_regeln.dtsx</FullPath>
+      <References />
+    </DtsPackage>
   </DTSPackages>
 </Project>
